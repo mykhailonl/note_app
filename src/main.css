@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "tailwindcss/preflight.css" layer(base);
+
+@import "./styles/color.css";
+@import "./styles/typography.css";
+@import "./styles/spacing.css";
+@import "./styles/radius.css";
+@import "./styles/shadow.css";
+@import "./styles/grid.css";
+
+
+
+/*
+TODO split to other files
+ */
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-mobile: 23rem;
+  --breakpoint-tablet: 48rem;
+  --breakpoint-desktop: 90rem;
+}
+
+@layer components {
+  .text-preset-1 {
+    font-size: var(--text-preset-1-size);
+    line-height: var(--text-preset-1-line-height);
+    letter-spacing: var(--text-preset-1-letter-spacing);
+    font-weight: 700;
+  }
+
+  .text-preset-2 {
+    font-size: var(--text-preset-2-size);
+    line-height: var(--text-preset-2-line-height);
+    letter-spacing: var(--text-preset-2-letter-spacing);
+    font-weight: 700;
+  }
+
+  .text-preset-3 {
+    font-size: var(--text-preset-3-size);
+    line-height: var(--text-preset-3-line-height);
+    letter-spacing: var(--text-preset-3-letter-spacing);
+    font-weight: 500;
+
+  }
+
+  .text-preset-4 {
+    font-size: var(--text-preset-4-size);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+    font-weight: 500;
+  }
+
+  .text-preset-5 {
+    font-size: var(--text-preset-5-size);
+    line-height: var(--text-preset-5-line-height);
+    letter-spacing: var(--text-preset-5-letter-spacing);
+    font-weight: 400;
+  }
+
+  .text-preset-6 {
+    font-size: var(--text-preset-6-size);
+    line-height: var(--text-preset-6-line-height);
+    letter-spacing: var(--text-preset-6-letter-spacing);
+    font-weight: 400;
+  }
+}
+
+@utility grid {
+  display: grid;
+  box-sizing: border-box;
+}
+
+@utility mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(var(--grid-column-mobile), 1fr));
+  gap: var(--grid-gap-mobile);
+  min-width: var(--container-width-mobile);
+  width: 100%;
+  /*max-width: var(--container-width-mobile);*/
+  padding-left: var(--container-padding-mobile);
+  padding-right: var(--container-padding-mobile);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@utility tablet-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(var(--grid-column-tablet), 1fr));
+  gap: var(--grid-gap-tablet);
+  width: 100%;
+  /*max-width: var(--container-width-tablet);*/
+  padding-left: var(--container-padding-tablet);
+  padding-right: var(--container-padding-tablet);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@utility desktop-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(var(--grid-column-desktop), 1fr));
+  gap: var(--grid-gap-desktop);
+  width: 100%;
+  /*max-width: var(--container-width-desktop);*/
+  padding-left: var(--container-padding-desktop);
+  padding-right: var(--container-padding-desktop);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@utility sidebar-grid {
+  display: grid;
+  grid-template-columns: 272px repeat(12, minmax(var(--grid-column-desktop), 1fr));
+  gap: var(--grid-gap-desktop);
+  width: 100%;
+  max-width: var(--container-width-desktop);
+  /*padding-left: var(--container-padding-desktop);*/
+  /*padding-right: var(--container-padding-desktop);*/
+  margin: 0 auto;
+  box-sizing: border-box;
+}

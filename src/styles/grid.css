@@ -1,0 +1,23 @@
+@theme {
+  --grid-column-mobile: 24px;
+  --grid-gap-mobile: 16px;
+  --container-width-mobile: 375px;
+  --container-padding: 16px;
+}
+
+@theme {
+  --grid-column-mobile: 24px;
+  --grid-gap-mobile: 16px;
+  --container-width-mobile: 375px;
+  --container-padding-mobile: 16px;
+
+  --grid-column-tablet: 67px;
+  --grid-gap-tablet: 24px;
+  --container-width-tablet: 768px;
+  --container-padding-tablet: 32px;
+
+  --grid-column-desktop: 70px;
+  --grid-gap-desktop: 24px;
+  --container-width-desktop: 1440px;
+  --container-padding-desktop: 32px;
+}

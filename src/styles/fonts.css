@@ -1,0 +1,164 @@
+/* ---------- INTER (SANS-SERIF) ---------- */
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/static/Inter_18pt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Medium */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/static/Inter_18pt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter SemiBold */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/static/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Bold */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/static/Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Variable Font */
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('../assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Italic Variable Font */
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('../assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- NOTO SERIF ---------- */
+/* Noto Serif Regular */
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('../assets/fonts/noto-serif/static/NotoSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Serif Medium */
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('../assets/fonts/noto-serif/static/NotoSerif-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Serif SemiBold */
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('../assets/fonts/noto-serif/static/NotoSerif-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Serif Bold */
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('../assets/fonts/noto-serif/static/NotoSerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Serif Variable Font */
+@font-face {
+  font-family: 'Noto Serif Variable';
+  src: url('../assets/fonts/noto-serif/NotoSerif-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Serif Italic Variable Font */
+@font-face {
+  font-family: 'Noto Serif Variable';
+  src: url('../assets/fonts/noto-serif/NotoSerif-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- SOURCE CODE PRO (MONOSPACE) ---------- */
+/* Source Code Pro Regular */
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../assets/fonts/source-code-pro/static/SourceCodePro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Code Pro Medium */
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../assets/fonts/source-code-pro/static/SourceCodePro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Code Pro SemiBold */
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../assets/fonts/source-code-pro/static/SourceCodePro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Code Pro Bold */
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../assets/fonts/source-code-pro/static/SourceCodePro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Code Pro Variable Font */
+@font-face {
+  font-family: 'Source Code Pro Variable';
+  src: url('../assets/fonts/source-code-pro/SourceCodePro-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Code Pro Italic Variable Font */
+@font-face {
+  font-family: 'Source Code Pro Variable';
+  src: url('../assets/fonts/source-code-pro/SourceCodePro-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
