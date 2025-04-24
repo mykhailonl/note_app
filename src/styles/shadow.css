@@ -1,0 +1,9 @@
+/*
+TODO shadows
+*/
+
+@theme {
+  --shadow-input-focus: 0px 0px 0px 2px --color-neutral-0, 0px 0px 0px 4px --color-neutral-500;
+  --shadow-button-focus: 0px 0px 0px 2px --color-neutral-0, 0px 0px 0px 4px --color-neutral-400;
+  --shadow-primarybutton-focus: 0px 0px 0px 2px --color-neutral-0, 0px 0px 0px 4px --colors-neutral-400;
+}

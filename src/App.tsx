@@ -1,7 +1,11 @@
-import './App.css';
+import { LoginPage } from './pages/LoginPage/LoginPage.tsx';
 
 function App() {
-  return '';
+  return (
+    <div className="flex h-full">
+      <LoginPage />
+    </div>
+  );
 }
 
 export default App;

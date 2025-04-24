@@ -1,0 +1,42 @@
+@import './fonts.css';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Noto Serif', ui-serif, Georgia, Times, serif;
+  --font-mono: 'Source Code Pro', ui-monospace, SFMono-Regular, monospace;
+
+  --font-sans-variable: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif-variable: 'Noto Serif Variable', ui-serif, Georgia, Times, serif;
+  --font-mono-variable: 'Source Code Pro Variable', ui-monospace, SFMono-Regular, monospace;
+
+  /* Text Preset 1 */
+  --text-preset-1-size: 24px;
+  --text-preset-1-line-height: 125%;
+  --text-preset-1-letter-spacing: -0.5px;
+
+  /* Text Preset 2 */
+  --text-preset-2-size: 22px;
+  --text-preset-2-line-height: 125%;
+  --text-preset-2-letter-spacing: -0.5px;
+
+  /* Text Preset 3 */
+  --text-preset-3-size: 16px;
+  --text-preset-3-line-height: 120%;
+  --text-preset-3-letter-spacing: -0.3px;
+
+  /* Text Preset 4 */
+  --text-preset-4-size: 14px;
+  --text-preset-4-line-height: 120%;
+  --text-preset-4-letter-spacing: -0.2px;
+
+  /* Text Preset 5 */
+  --text-preset-5-size: 14px;
+  --text-preset-5-line-height: 130%;
+  --text-preset-5-letter-spacing: -0.2px;
+
+  /* Text Preset 6 */
+  --text-preset-6-size: 12px;
+  --text-preset-6-line-height: 120%;
+  --text-preset-6-letter-spacing: -0.2px;
+}
+
