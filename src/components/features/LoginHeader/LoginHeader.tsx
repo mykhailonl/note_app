@@ -1,25 +1,23 @@
 /*
-* TODO add link on logo, styles for another resolution
-*/
+ * TODO styles for another resolution
+ */
+
+import { LogoHeader } from '../../common/LogoHeader';
 
 export const LoginHeader = () => {
   return (
     <header className="flex flex-col gap-y-4">
-      <div className="flex flex-col items-center pb-100">
-        <a>
-          <img src="src/assets/images/logo.svg" alt="NoteApp logo"/>
-        </a>
-      </div>
+      <LogoHeader />
 
       <div className="flex flex-col gap-y-2 text-center">
-        <h1 className="font-sans text-preset-1 text-neutral-950">
+        <h1 className="text-preset-1 font-sans text-neutral-950">
           Welcome to Note
         </h1>
 
-        <p className="text-preset-5 text-neutral-600 font-normal">
+        <p className="text-preset-5 font-normal text-neutral-600">
           Please log in to continue
         </p>
       </div>
     </header>
   );
-}
+};
