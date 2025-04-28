@@ -1,7 +1,7 @@
-import { Divider } from '../../common/Divider';
-import { SecondaryButton } from '../../common/SecondaryButton';
+import { Divider } from '../Divider';
+import { SecondaryButton } from '../SecondaryButton';
 
-export const LoginFooter = () => {
+export const FormFooter = () => {
   // TODO
   const handleButtonClick = () => {};
 

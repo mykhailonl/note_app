@@ -1,10 +1,10 @@
-import { LoginPage } from './pages/LoginPage';
+import { SignUpPage } from './pages/SignUpPage';
 
 function App() {
   return (
     <div className="flex h-full">
       <main className="mobile-grid tablet:tablet-grid desktop:desktop-grid gap-x-4 bg-neutral-100">
-        <LoginPage />
+        <SignUpPage />
       </main>
     </div>
   );
