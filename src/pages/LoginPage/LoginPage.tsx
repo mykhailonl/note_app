@@ -1,6 +1,6 @@
 import { FormHeader } from '../../components/common/FormHeader';
-import { LoginFooter } from '../../components/features/LoginFooter';
-import { LoginForm } from '../../components/features/LoginForm';
+import { FormFooter } from '../../components/common/FormFooter';
+import { LoginForm } from '../../components/features/Login/LoginForm';
 import { PageWrapper } from '../../components/common/PageWrapper';
 import { Divider } from '../../components/common/Divider';
 
@@ -19,7 +19,7 @@ export const LoginPage = () => {
 
       <LoginForm />
 
-      <LoginFooter />
+      <FormFooter />
 
       <Divider />
 

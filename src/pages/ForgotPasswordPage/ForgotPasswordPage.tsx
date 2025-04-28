@@ -1,5 +1,5 @@
 import { FormHeader } from '../../components/common/FormHeader';
-import { EmailInput } from '../../components/common/EmailInput';
+import { EmailField } from '../../components/common/EmailField';
 import { PrimaryButton } from '../../components/common/PrimaryButton';
 import { PageWrapper } from '../../components/common/PageWrapper';
 import { PageFormWrapper } from '../../components/common/PageFormWrapper';
@@ -21,7 +21,7 @@ export const ForgotPasswordPage = () => {
       />
 
       <PageFormWrapper formAction={submitAction}>
-        <EmailInput />
+        <EmailField />
 
         <PrimaryButton
           buttonText={{

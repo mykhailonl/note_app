@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { EmailInput } from '../../common/EmailInput';
-import { PrimaryButton } from '../../common/PrimaryButton';
-import { PageFormWrapper } from '../../common/PageFormWrapper';
-import { PasswordField } from '../../common/PasswordField';
+import React, { useState } from 'react';
+
+import { EmailField } from '../../../common/EmailField';
+import { PrimaryButton } from '../../../common/PrimaryButton';
+import { PageFormWrapper } from '../../../common/PageFormWrapper';
+import { PasswordField } from '../../../common/PasswordField';
 
 /*
  * TODO isPending state,
@@ -36,12 +37,31 @@ export const LoginForm = () => {
   //
   const [password, setPassword] = useState('');
 
+  const [email, setEmail] = useState('');
+
+  // TODO
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
   // TODO
   const handleLoginClick = () => {};
 
+  // TODO
+  const handleFormSubmit = () => {};
+
   return (
-    <PageFormWrapper formAction={() => {}}>
-      <EmailInput />
+    <PageFormWrapper formAction={handleFormSubmit}>
+      <EmailField
+        label={{
+          labelText: 'Email Address',
+          labelFor: 'email',
+        }}
+        input={{
+          value: email,
+          onChange: handleEmailChange,
+        }}
+      />
 
       <PasswordField
         label={'Password'}
