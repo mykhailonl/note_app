@@ -1,11 +1,13 @@
-// @ts-check
-/** @type {import("prettier").Config} */
-export default {
-  semi: true,
-  singleQuote: true,
-  printWidth: 80,
-  tabWidth: 2,
-  endOfLine: 'auto',
-  plugins: ['prettier-plugin-tailwindcss'],
-  tailwindFunctions: ['tw'],
-};
+{
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "endOfLine": "auto",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindFunctions": [
+    "tw"
+  ]
+}

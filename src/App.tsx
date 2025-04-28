@@ -1,9 +1,11 @@
-import { LoginPage } from './pages/LoginPage/LoginPage.tsx';
+import { LoginPage } from './pages/LoginPage';
 
 function App() {
   return (
     <div className="flex h-full">
-      <LoginPage />
+      <main className="mobile-grid tablet:tablet-grid desktop:desktop-grid gap-x-4 bg-neutral-100">
+        <LoginPage />
+      </main>
     </div>
   );
 }
