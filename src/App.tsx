@@ -1,4 +1,4 @@
-import { LoginPage } from './pages/LoginPage/LoginPage.tsx';
+import { LoginPage } from './pages/LoginPage';
 
 function App() {
   return (
