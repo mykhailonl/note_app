@@ -22,3 +22,5 @@ export const FormHeader: React.FC<FormHeaderType> = ({ styles = {}, textBlock })
     </header>
   );
 };
+
+export default FormHeader;

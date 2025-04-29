@@ -65,3 +65,5 @@ export const ResetPasswordPage = () => {
     </PageWrapper>
   );
 };
+
+export default ResetPasswordPage;

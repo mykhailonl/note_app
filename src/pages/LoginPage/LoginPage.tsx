@@ -1,10 +1,10 @@
-import { FormHeader } from '../../components/common/FormHeader';
 import { FormFooter } from '../../components/common/FormFooter';
 import { LoginForm } from '../../components/features/Login/LoginForm';
-import { PageWrapper } from '../../components/common/PageWrapper';
 import { Divider } from '../../components/common/Divider';
+import { PageWrapper } from '../../components/common/PageWrapper';
+import { FormHeader } from '../../components/common/FormHeader';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   // TODO optimize func, create logic
   const handleSignUp = () => {};
 
@@ -33,3 +33,5 @@ export const LoginPage = () => {
     </PageWrapper>
   );
 };
+
+export default LoginPage;

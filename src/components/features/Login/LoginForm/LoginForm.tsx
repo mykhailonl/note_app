@@ -81,3 +81,5 @@ export const LoginForm = () => {
     </PageFormWrapper>
   );
 };
+
+export default LoginForm;
