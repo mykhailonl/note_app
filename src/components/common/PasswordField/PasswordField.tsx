@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import cn from 'classNames';
+import cn from 'classnames';
 
 import { PasswordFieldProps } from '../../../types/PasswordInput/PasswordFieldProps.ts';
 

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { FormHeader } from '../../components/common/FormHeader';
 import { EmailField } from '../../components/common/EmailField';
 import { PrimaryButton } from '../../components/common/PrimaryButton';
@@ -5,6 +7,12 @@ import { PageWrapper } from '../../components/common/PageWrapper';
 import { PageFormWrapper } from '../../components/common/PageFormWrapper';
 
 export const ForgotPasswordPage = () => {
+  // TODO
+  const [email, setEmail] = useState('');
+  const handleEmailChange = () => {
+    setEmail('');
+  };
+
   // TODO
   const handleButtonClick = () => {};
 
@@ -21,7 +29,16 @@ export const ForgotPasswordPage = () => {
       />
 
       <PageFormWrapper formAction={submitAction}>
-        <EmailField />
+        <EmailField
+          label={{
+            labelText: 'Email Address',
+            labelFor: 'email',
+          }}
+          input={{
+            value: email,
+            onChange: handleEmailChange,
+          }}
+        />
 
         <PrimaryButton
           buttonText={{
@@ -33,3 +50,5 @@ export const ForgotPasswordPage = () => {
     </PageWrapper>
   );
 };
+
+export default ForgotPasswordPage;

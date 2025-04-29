@@ -26,3 +26,5 @@ export const FormFooter = () => {
     </footer>
   );
 };
+
+export default FormFooter;

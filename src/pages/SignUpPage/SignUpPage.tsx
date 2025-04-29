@@ -35,3 +35,5 @@ export const SignUpPage = () => {
     </PageWrapper>
   );
 };
+
+export default SignUpPage;
