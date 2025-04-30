@@ -4,8 +4,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-// TODO move main block to PageWrapper for all pages
-
 export const PageWrapper: React.FC<Props> = ({ children }) => {
   return (
     <div className="flex h-screen">
