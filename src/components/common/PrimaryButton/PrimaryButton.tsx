@@ -14,15 +14,10 @@ export const PrimaryButton: React.FC<Button> = ({
     <button
       type={type}
       onClick={onClick}
-      className={cn(
-        'rounded-8 focus:shadow-primarybutton-focus bg-blue-500 px-200 py-150 hover:bg-blue-700 focus:bg-blue-500',
-        buttonStyles,
-      )}
+      className={cn('rounded-8', buttonStyles)}
       disabled={disabled}
     >
-      <span className={cn('text-neutral-0 text-preset-3', buttonText.styles)}>
-        {buttonText.textValue}
-      </span>
+      <span className={cn('', buttonText.styles)}>{buttonText.textValue}</span>
     </button>
   );
 };

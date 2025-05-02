@@ -49,8 +49,12 @@ export const SignUpForm = () => {
       <PrimaryButton
         buttonText={{
           textValue: 'Sign up',
+          styles: 'text-neutral-0 text-preset-3',
         }}
         onClick={handleSignUpClick}
+        buttonStyles={
+          'focus:shadow-primarybutton-focus bg-blue-500 px-200 py-150 hover:bg-blue-700 focus:bg-blue-500'
+        }
       />
     </PageFormWrapper>
   );

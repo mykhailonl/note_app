@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { NoteType } from '../../../types/Notes/NotesType.ts';
 import { Note } from '../Note';
+
+import { NoteType } from '../../../types/Notes/NotesType.ts';
 
 type Props = {
   userNotes: NoteType[];
