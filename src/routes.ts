@@ -1,8 +1,12 @@
-import { type RouteConfig, route } from '@react-router/dev/routes';
+import { type RouteConfig, route, layout } from '@react-router/dev/routes';
 
 export default [
   // * matches all URLs, the ? makes it optional so it will match / as well
-  route('/', 'pages/HomePage/HomePage.tsx'),
+  layout('layouts/HomePageLayout.tsx', [
+    route('/', 'pages/HomePage/HomePage.tsx'),
+    route('notes/:noteId', 'pages/NotePage/NotePage.tsx'),
+  ]),
+
   route('/login', 'pages/LoginPage/LoginPage.tsx'),
   route('/signup', 'pages/SignUpPage/SignUpPage.tsx'),
   route('/forgot', 'pages/ForgotPasswordPage/ForgotPasswordPage.tsx'),

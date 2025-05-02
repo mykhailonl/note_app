@@ -1,17 +1,9 @@
-import { useEffect, useState } from 'react';
-
 import { NoteList } from '../NoteList';
 
-import { NoteType } from '../../../types/Notes/NotesType.ts';
-
-import mockData from '../../../api/mockData.json';
+import { useNotes } from '../../../hooks/useNotes.ts';
 
 export const HomeContent = () => {
-  const [notes, setNotes] = useState<NoteType[]>([]);
-
-  useEffect(() => {
-    setNotes(mockData.notes);
-  }, []);
+  const { notes } = useNotes();
 
   return (
     <div className="mobile-grid bg-neutral-0 border-neutral-0 box-border rounded-t-xl py-250">

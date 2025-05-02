@@ -1,5 +1,5 @@
-import { useMediaQuery } from 'react-responsive';
 import React, { useMemo, createContext } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export interface DeviceContextType {
   isMobile: boolean;

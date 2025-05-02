@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { Link } from 'react-router';
 
 import { NoteTags } from '../NoteTags';
 import { Divider } from '../Divider';
@@ -13,13 +14,19 @@ type Props = {
 
 // TODO move Divider from Note to map in NoteList
 export const Note: React.FC<Props> = ({ note }) => {
-  // TODO memo formatted date
-  const formattedDate = formatDate(note.lastEdited);
+  const formattedDate = useMemo(() => formatDate(note.lastEdited), [note]);
+
+  const handleNoteClick = () => {};
 
   return (
     <>
-      <div className="flex flex-col items-start gap-150 self-stretch p-100">
-        <h1 className="text-preset-3 font-sans text-neutral-950">{note.title}</h1>
+      <div
+        className="flex flex-col items-start gap-150 self-stretch p-100"
+        onClick={handleNoteClick}
+      >
+        <Link to={`notes/${note.id}`}>
+          <h1 className="text-preset-3 w-full font-sans text-neutral-950">{note.title}</h1>
+        </Link>
 
         <NoteTags tags={note.tags} />
 
