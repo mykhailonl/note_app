@@ -8,7 +8,7 @@ export const HomePage = () => {
       <NewNoteButton
         iconName={'plus'}
         styles={{
-          buttonStyles: 'fixed z-4 bottom-900 right-200',
+          buttonStyles: 'fixed z-4 bottom-900 right-200 tablet:right-300 tablet:bottom-1200',
         }}
       />
     </>

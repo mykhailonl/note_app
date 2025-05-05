@@ -21,7 +21,7 @@ export const NewNoteButton: React.FC<Props> = ({ iconName, styles }) => {
         styles?.buttonStyles,
       )}
     >
-      <Icon className={cn('m-100 h-400 w-400', styles?.iconStyles)} />
+      <Icon className={cn('tablet:m-200 m-100 h-400 w-400', styles?.iconStyles)} />
     </button>
   );
 };

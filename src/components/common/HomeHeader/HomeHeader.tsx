@@ -2,7 +2,7 @@ import { LogoHeader } from '../LogoHeader';
 
 export const HomeHeader = () => {
   return (
-    <header className="mobile-grid py-150">
+    <header className="mobile-grid tablet:tablet-grid tablet:py-200 py-150">
       <LogoHeader />
     </header>
   );

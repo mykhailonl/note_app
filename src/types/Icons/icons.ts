@@ -25,3 +25,6 @@ export const iconComponents = {
 
 // Type for icons based on dict keys
 export type IconName = keyof typeof iconComponents;
+
+// Type used in mapping inside Menu Bar Icons to get text values with safety;
+export type MenuIconName = Extract<IconName, 'home' | 'search' | 'archive' | 'tag' | 'settings'>;
