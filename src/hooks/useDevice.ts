@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { DeviceContext, DeviceContextType } from '../context/ScreenContext.tsx';
 
 export const useDevice = (): DeviceContextType => {
