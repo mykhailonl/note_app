@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { MenuBarLink } from '../MenuBarLink';
-import { useDevice } from '../../../hooks/useDevice.ts';
 import { Divider } from '../Divider';
+
+import { useDevice } from '../../../hooks/useDevice.ts';
 
 const NAV_ITEMS = [
   { href: '/', iconName: 'home' },
