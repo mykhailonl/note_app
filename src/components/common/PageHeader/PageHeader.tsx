@@ -1,17 +1,18 @@
 import cn from 'classnames';
 import React from 'react';
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 
 import { iconComponents } from '../../../types/Icons/icons.ts';
+import getPageTitle from '../../../utils/getPageTitle.ts';
 import { TopBarSearch } from '../TopBarSearch';
 
-type Props = {
-  text: string;
-};
-
-export const PageHeader: React.FC<Props> = ({ text }) => {
+export const PageHeader: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  const pathname = location.pathname;
+
   const query = searchParams.get('query') || '';
+  const title = getPageTitle(pathname, searchParams);
 
   const Icon = iconComponents['settings'];
 
@@ -29,7 +30,14 @@ export const PageHeader: React.FC<Props> = ({ text }) => {
 
   return (
     <header className="flex h-[81px] items-center justify-between border-b border-neutral-200 px-400">
-      <h1 className="text-preset-1 text-neutral-950">{text}</h1>
+      {title.basicTitle ? (
+        <h1 className="text-preset-1 text-neutral-950">{title.text}</h1>
+      ) : (
+        <div className="text-preset-1">
+          <span className="text-neutral-600">{title.text}</span>
+          <span className="text-neutral-950">{title.extraInfo}</span>
+        </div>
+      )}
 
       <div className="flex items-center gap-200">
         <TopBarSearch value={query} onChange={handleQueryChange} />
