@@ -1,9 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
 
+import { Divider } from '../../components/common/Divider';
 import { NoteHeaderControl } from '../../components/common/NoteHeaderControl';
 import { NoteProperties } from '../../components/common/NoteProperties';
-import { Divider } from '../../components/common/Divider';
-
 import { useNotes } from '../../hooks/useNotes.ts';
 
 // TODO how to render note body if Ill add an edit functionality
