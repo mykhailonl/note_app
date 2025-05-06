@@ -4,6 +4,8 @@ import cn from 'classnames';
 import { PasswordFieldProps } from '../../../types/PasswordInput/PasswordFieldProps.ts';
 
 // TODO validationError styling
+// TODO change a links
+// TODO change img to svg
 
 export const PasswordField: React.FC<PasswordFieldProps> = ({
   label,

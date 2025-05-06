@@ -1,6 +1,5 @@
-import { NoteList } from '../NoteList';
-
 import { useNotes } from '../../../hooks/useNotes.ts';
+import { NoteList } from '../NoteList';
 
 export const HomeContent = () => {
   const { notes } = useNotes();

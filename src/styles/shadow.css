@@ -7,4 +7,5 @@ TODO shadows
   --shadow-button-focus: 0px 0px 0px 2px --color-neutral-0, 0px 0px 0px 4px --color-neutral-400;
   --shadow-primarybutton-focus: 0px 0px 0px 2px --color-neutral-0, 0px 0px 0px 4px --colors-neutral-400;
   --shadow-menubar: 0px -4px 6px 0px rgba(240, 240, 240, 0.60);
+  --shadow-queryField: 0px 1px 2px 0px rgba(10, 13, 20, 0.03);
 }

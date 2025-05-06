@@ -26,7 +26,7 @@ export const NoteHeaderControl = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-between self-stretch">
-      <div className="flex items-center justify-between self-stretch pb-150">
+      <div className="tablet:pb-200 flex items-center justify-between self-stretch pb-150">
         <button
           className="gap-050 text-preset-5 flex items-center font-sans text-neutral-600"
           onClick={() => navigate(-1)}

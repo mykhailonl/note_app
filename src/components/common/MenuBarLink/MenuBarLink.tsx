@@ -1,7 +1,6 @@
+import cn from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import cn from 'classnames';
 
 import { iconComponents, MenuIconName } from '../../../types/Icons/icons';
 

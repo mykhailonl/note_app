@@ -1,15 +1,17 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { NoteType } from '../types/Notes/NotesType.ts';
 
 import mockData from '../api/mockData.json';
+import { NoteTagType, NoteType } from '../types/Notes/NotesType.ts';
 
 export interface NotesContextType {
   notes: NoteType[];
+  getTags: () => NoteTagType[];
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const NotesContext = createContext<NotesContextType>({
   notes: [],
+  getTags: () => [],
 });
 
 interface NotesProviderProps {
@@ -31,6 +33,12 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
 
   const deleteNote = () => {};
 
+  const getTags = (): string[] => {
+    const allTags = notes.flatMap((note) => note.tags);
+
+    return [...new Set(allTags)];
+  };
+
   const value = {
     notes,
     setNotes,
@@ -38,6 +46,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
     updateNote,
     archiveNote,
     deleteNote,
+    getTags,
   };
 
   return <NotesContext.Provider value={value}>{children}</NotesContext.Provider>;
