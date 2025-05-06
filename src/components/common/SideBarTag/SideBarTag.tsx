@@ -21,21 +21,32 @@ type Props = {
 
 export const SideBarTag: React.FC<Props> = ({ tag, styles, onClick, isActive }) => {
   const Icon = iconComponents['tag'];
+  const IconChevron = iconComponents['chevronRight'];
 
   return (
     <button
       onClick={() => onClick(tag.tagName)}
       className={cn(
-        'rounded-8 flex w-[240px] items-center gap-100 px-150 py-125',
-        isActive ? 'bg-neutral-100 text-blue-500' : 'bg-neutral-0 text-neutral-700',
+        'rounded-8 flex w-[240px] items-center gap-100 self-stretch px-150 py-125',
+        isActive ? 'bg-neutral-100' : 'bg-neutral-0',
         styles?.containerStyles,
       )}
     >
-      <Icon className={cn('h-250 w-250', styles?.iconStyles)} />
+      <div className={cn(isActive ? 'text-blue-500' : 'text-neutral-700')}>
+        <Icon className={cn('flex h-250 w-250', styles?.iconStyles)} />
+      </div>
 
-      <span className={cn('text-preset-4 self-baseline-last', styles?.textStyles)}>
-        {tag.tagName}
-      </span>
+      <div className="grow self-end">
+        <span className={cn('text-preset-4 flex text-neutral-700', styles?.textStyles)}>
+          {tag.tagName}
+        </span>
+      </div>
+
+      {isActive && (
+        <div className="text-neutral-700">
+          <IconChevron className="flex h-250 w-250" />
+        </div>
+      )}
     </button>
   );
 };

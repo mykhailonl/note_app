@@ -10,7 +10,7 @@ export const HomePage = () => {
   if (isDesktop) {
     return (
       <div className="flex grow flex-col">
-        <PageHeader text={'All Notes'} />
+        <PageHeader />
 
         <PageContent />
       </div>
