@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { IconName } from '../Icons/icons.ts';
+
 export interface Button {
   buttonText: {
     textValue: string;
@@ -9,9 +11,9 @@ export interface Button {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   buttonStyles?: string;
   disabled?: boolean;
-  img?: {
-    src: string;
-    altText: string;
+  extraSymbol?: boolean;
+  icon?: {
+    name: IconName;
     styles?: string;
   };
 }

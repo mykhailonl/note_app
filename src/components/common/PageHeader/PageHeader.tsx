@@ -29,7 +29,7 @@ export const PageHeader: React.FC = () => {
   };
 
   return (
-    <header className="flex h-[81px] items-center justify-between border-b border-neutral-200 px-400">
+    <header className="flex h-1000 shrink-0 items-center justify-between border-b border-neutral-200 px-400">
       {title.basicTitle ? (
         <h1 className="text-preset-1 text-neutral-950">{title.text}</h1>
       ) : (

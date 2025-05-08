@@ -1,10 +1,11 @@
-import { PageWrapper } from '../../components/common/PageWrapper';
-import { FormHeader } from '../../components/common/FormHeader';
-import { SignUpForm } from '../../components/features/SignUp/SignUpForm';
-import { FormFooter } from '../../components/common/FormFooter';
 import { Divider } from '../../components/common/Divider';
+import { FormFooter } from '../../components/common/FormFooter';
+import { FormHeader } from '../../components/common/FormHeader';
+import { PageWrapper } from '../../components/common/PageWrapper';
+import { SignUpForm } from '../../components/features/SignUp/SignUpForm';
 
 // TODO maybe move last block into reusable component?
+// TODO change last button block?
 
 export const SignUpPage = () => {
   // TODO

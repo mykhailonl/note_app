@@ -1,14 +1,13 @@
-import React from 'react';
 import cn from 'classnames';
-
-import { LogoHeader } from '../LogoHeader';
+import React from 'react';
 
 import { FormHeaderType } from '../../../types/Forms/FormHeader.ts';
+import { LogoHeader } from '../LogoHeader';
 
 export const FormHeader: React.FC<FormHeaderType> = ({ styles = {}, textBlock }) => {
   return (
     <header className={cn('flex flex-col gap-y-4', styles)}>
-      <LogoHeader />
+      <LogoHeader styles={{ containerStyles: 'justify-center pb-100' }} />
 
       <div className={cn('flex flex-col gap-y-2 text-center', textBlock.styles)}>
         <h1 className={cn('text-preset-1 font-sans text-neutral-950', textBlock.headerStyles)}>
