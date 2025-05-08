@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
 
-import { iconComponents } from '../../../types/Icons/icons.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
 import { NoteTagType } from '../../../types/Notes/NotesType.ts';
 
 type Props = {

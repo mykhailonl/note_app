@@ -1,7 +1,7 @@
-import React from 'react';
 import cn from 'classnames';
+import React from 'react';
 
-import { iconComponents, IconName } from '../../../types/Icons/icons.ts';
+import { iconComponents, IconName } from '../../../types/Icons/IconsType.ts';
 
 type Props = {
   iconName: IconName;

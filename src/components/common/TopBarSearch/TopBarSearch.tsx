@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { iconComponents } from '../../../types/Icons/icons.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
 
 // TODO check onChange type
 type Props = {

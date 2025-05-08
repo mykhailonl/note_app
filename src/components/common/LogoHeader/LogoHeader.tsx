@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { iconComponents } from '../../../types/Icons/icons.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
 
 /*
  * TODO add link on logo, change to Link etc,

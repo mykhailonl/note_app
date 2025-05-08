@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React from 'react';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 
-import { iconComponents } from '../../../types/Icons/icons.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
 import getPageTitle from '../../../utils/getPageTitle.ts';
 import { TopBarSearch } from '../TopBarSearch';
 

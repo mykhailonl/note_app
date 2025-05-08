@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import { iconComponents } from '../../../types/Icons/icons.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
 import { BorderButton } from '../BorderButton';
 import { Divider } from '../Divider';
 import { PrimaryButton } from '../PrimaryButton';
