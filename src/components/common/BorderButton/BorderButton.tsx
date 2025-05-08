@@ -3,7 +3,7 @@ import React from 'react';
 
 import { useDevice } from '../../../hooks/useDevice.ts';
 import { Button } from '../../../types/Buttons/Button.ts';
-import { iconComponents, RightSideBarIconName } from '../../../types/Icons/icons.ts';
+import { iconComponents, RightSideBarIconName } from '../../../types/Icons/IconsType.ts';
 
 interface BorderButtonProps extends Omit<Button, 'icon'> {
   icon: {

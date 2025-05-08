@@ -1,31 +1,39 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { FormHeader } from '../../components/common/FormHeader';
+import { InputField } from '../../components/common/InputField';
 import { PageFormWrapper } from '../../components/common/PageFormWrapper';
 import { PageWrapper } from '../../components/common/PageWrapper';
-import { PasswordField } from '../../components/common/PasswordField';
 import { PrimaryButton } from '../../components/common/PrimaryButton';
-import { ValidationError } from '../../types/PasswordInput/ValidationOptions.ts';
-
-// TODO handleFormSumbit,
-// error check on input field blur
 
 export const ResetPasswordPage = () => {
+  //#region password
   const [password, setPassword] = useState('');
-  const [passwordError] = useState<ValidationError>(null);
-  // TODO replace back to get rid of eslint errors
-  // const [passwordError, setPasswordError] = useState<ValidationError>(null);
+  const [passwordError, setPasswordError] = useState(false);
 
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
+  //#endregion
+
+  //#region confirmation
   const [confirmation, setConfirmation] = useState('');
-  const [confirmationError] = useState<ValidationError>(null);
-  // TODO replace back to get rid of eslint errors
+  const [confirmationError, setConfirmationError] = useState(false);
 
-  // const [confirmationError, setConfirmationError] = useState<ValidationError>(null);
+  const handleConfirmationChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setConfirmation(event.target.value);
+  };
+  //#endregion
 
   //TODO
   const handleButtonClick = () => {};
+
   // TODO
-  const handleFormSubmit = () => {};
+  const handleFormSubmit = () => {
+    //todo change after
+    setPasswordError(false);
+    setConfirmationError(false);
+  };
 
   return (
     <PageWrapper>
@@ -37,21 +45,40 @@ export const ResetPasswordPage = () => {
       />
 
       <PageFormWrapper formAction={handleFormSubmit}>
-        <PasswordField
-          value={password}
-          label={'New Password'}
-          onChange={setPassword}
-          validationError={passwordError}
-          uiOptions={{
-            hint: 'At least 8 characters',
+        <InputField
+          label={{ labelText: 'New Password' }}
+          input={{
+            value: password,
+            onChange: handlePasswordChange,
+            type: 'password',
+            inputIconShown: 'right',
+            disabled: false,
+          }}
+          hint={{
+            hintShown: true,
+            hintText: 'At least 8 characters',
+          }}
+          validation={{
+            error: passwordError,
           }}
         />
 
-        <PasswordField
-          value={confirmation}
-          label={'Confirm New Password'}
-          onChange={setConfirmation}
-          validationError={confirmationError}
+        <InputField
+          label={{ labelText: 'Confirm New Password' }}
+          input={{
+            value: confirmation,
+            onChange: handleConfirmationChange,
+            type: 'password',
+            id: 'confirmation',
+            inputIconShown: 'right',
+            disabled: false,
+          }}
+          hint={{
+            hintShown: false,
+          }}
+          validation={{
+            error: confirmationError,
+          }}
         />
 
         <PrimaryButton
@@ -60,9 +87,7 @@ export const ResetPasswordPage = () => {
             styles: 'text-neutral-0 text-preset-3',
           }}
           onClick={handleButtonClick}
-          buttonStyles={
-            'flex items-center justify-center bg-blue-500 px-200 py-150'
-          }
+          buttonStyles={'flex items-center justify-center bg-blue-500 px-200 py-150'}
         />
       </PageFormWrapper>
     </PageWrapper>

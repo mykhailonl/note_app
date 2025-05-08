@@ -1,10 +1,9 @@
-import React from 'react';
 import cn from 'classnames';
+import React from 'react';
 
 import { useDevice } from '../../../hooks/useDevice.ts';
-
+import { iconComponents, IconName } from '../../../types/Icons/IconsType.ts';
 import { NoteTagType } from '../../../types/Notes/NotesType.ts';
-import { iconComponents, IconName } from '../../../types/Icons/icons.ts';
 
 type Props = {
   iconName: IconName;

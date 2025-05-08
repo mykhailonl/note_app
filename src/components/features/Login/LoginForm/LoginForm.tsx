@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { EmailField } from '../../../common/EmailField';
+import { InputField } from '../../../common/InputField';
 import { PageFormWrapper } from '../../../common/PageFormWrapper';
-import { PasswordField } from '../../../common/PasswordField';
 import { PrimaryButton } from '../../../common/PrimaryButton';
 
 /*
@@ -35,40 +34,66 @@ export const LoginForm = () => {
   //   null,
   // );
   //
-  const [password, setPassword] = useState('');
-
+  //#region email
   const [email, setEmail] = useState('');
-
-  // TODO
+  const [emailError, setEmailError] = useState(false);
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
+  //#endregion
+
+  //#region password
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState(false);
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
+  //#endregion
 
   // TODO
   const handleLoginClick = () => {};
 
   // TODO
-  const handleFormSubmit = () => {};
+  const handleFormSubmit = () => {
+    setEmailError(false);
+    setPasswordError(false);
+  };
 
   return (
     <PageFormWrapper formAction={handleFormSubmit}>
-      <EmailField
-        label={{
-          labelText: 'Email Address',
-          labelFor: 'email',
-        }}
+      <InputField
+        label={{ labelText: 'Email Address' }}
         input={{
           value: email,
           onChange: handleEmailChange,
+          type: 'email',
+          placeholderText: 'email@example.com',
+          disabled: false,
+          inputIconShown: 'none',
+        }}
+        hint={{
+          hintShown: false,
+        }}
+        validation={{
+          error: emailError,
         }}
       />
 
-      <PasswordField
-        label={'Password'}
-        value={password}
-        onChange={setPassword}
-        uiOptions={{
-          showForgotLink: true,
+      <InputField
+        label={{ labelText: 'Password', labelForgotShown: true }}
+        input={{
+          value: password,
+          onChange: handlePasswordChange,
+          type: 'password',
+          disabled: false,
+          inputIconShown: 'right',
+        }}
+        hint={{
+          hintShown: false,
+        }}
+        validation={{
+          error: passwordError,
         }}
       />
 

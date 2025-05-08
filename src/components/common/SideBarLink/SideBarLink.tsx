@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { iconComponents, SideBarIconName } from '../../../types/Icons/icons.ts';
+import { iconComponents, SideBarIconName } from '../../../types/Icons/IconsType.ts';
 
 type Props = {
   href: string;

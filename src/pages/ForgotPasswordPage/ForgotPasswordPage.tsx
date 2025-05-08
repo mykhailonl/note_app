@@ -1,23 +1,28 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-import { EmailField } from '../../components/common/EmailField';
 import { FormHeader } from '../../components/common/FormHeader';
+import { InputField } from '../../components/common/InputField';
 import { PageFormWrapper } from '../../components/common/PageFormWrapper';
 import { PageWrapper } from '../../components/common/PageWrapper';
 import { PrimaryButton } from '../../components/common/PrimaryButton';
 
 export const ForgotPasswordPage = () => {
-  // TODO
+  //#region email
   const [email, setEmail] = useState('');
-  const handleEmailChange = () => {
-    setEmail('');
+  const [emailError, setEmailError] = useState(false);
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
   };
+  //#endregion
 
   // TODO
   const handleButtonClick = () => {};
 
   // TODO formAction
-  const submitAction = () => {};
+  const submitAction = () => {
+    setEmailError(false); //todo remove after
+  };
 
   return (
     <PageWrapper>
@@ -29,14 +34,21 @@ export const ForgotPasswordPage = () => {
       />
 
       <PageFormWrapper formAction={submitAction}>
-        <EmailField
-          label={{
-            labelText: 'Email Address',
-            labelFor: 'email',
-          }}
+        <InputField
+          label={{ labelText: 'Email Address' }}
           input={{
             value: email,
             onChange: handleEmailChange,
+            type: 'email',
+            inputIconShown: 'none',
+            placeholderText: 'email@example.com',
+            disabled: false,
+          }}
+          hint={{
+            hintShown: false,
+          }}
+          validation={{
+            error: emailError,
           }}
         />
 

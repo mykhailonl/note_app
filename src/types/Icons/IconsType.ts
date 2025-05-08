@@ -4,10 +4,13 @@ import { ReactComponent as ChevronRightIcon } from '../../assets/images/icon-che
 import { ReactComponent as ClockIcon } from '../../assets/images/icon-clock.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/images/icon-delete.svg';
 import { ReactComponent as GoogleIcon } from '../../assets/images/icon-google.svg';
+import { ReactComponent as HideInputIcon } from '../../assets/images/icon-hide-password.svg';
 import { ReactComponent as HomeIcon } from '../../assets/images/icon-home.svg';
+import { ReactComponent as InfoIcon } from '../../assets/images/icon-info.svg';
 import { ReactComponent as PlusIcon } from '../../assets/images/icon-plus.svg';
 import { ReactComponent as SearchIcon } from '../../assets/images/icon-search.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/images/icon-settings.svg';
+import { ReactComponent as ShowInputIcon } from '../../assets/images/icon-show-password.svg';
 import { ReactComponent as TagIcon } from '../../assets/images/icon-tag.svg';
 import { ReactComponent as LogoIcon } from '../../assets/images/logo.svg';
 
@@ -25,6 +28,9 @@ export const iconComponents = {
   delete: DeleteIcon,
   chevronRight: ChevronRightIcon,
   google: GoogleIcon,
+  show: ShowInputIcon,
+  hide: HideInputIcon,
+  info: InfoIcon,
 };
 
 // Type for icons based on dict keys

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconName } from '../Icons/icons.ts';
+import { IconName } from '../Icons/IconsType.ts';
 
 export interface Button {
   buttonText: {
