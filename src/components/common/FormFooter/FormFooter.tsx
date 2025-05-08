@@ -15,11 +15,14 @@ export const FormFooter = () => {
         <SecondaryButton
           buttonText={{
             textValue: 'Google',
+            styles: ' text-preset-4 px-200',
           }}
-          img={{
-            src: 'src/assets/images/icon-google.svg',
-            altText: 'Login with Google',
+          icon={{
+            name: 'google',
           }}
+          buttonStyles={
+            'text-neutral-950 flex items-center justify-center py-150 px-200 bg-neutral-200'
+          }
           onClick={handleButtonClick}
         />
       </div>

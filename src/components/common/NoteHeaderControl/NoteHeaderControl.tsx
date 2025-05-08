@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-import { HeaderButton } from '../HeaderButton';
-import { PrimaryButton } from '../PrimaryButton';
-import { Divider } from '../Divider';
-
 import { iconComponents } from '../../../types/Icons/icons.ts';
+import { BorderButton } from '../BorderButton';
+import { Divider } from '../Divider';
+import { PrimaryButton } from '../PrimaryButton';
+
 
 // TODO how to handle delete/archive? do i need to pass a note itself to this component?
 
@@ -38,9 +38,9 @@ export const NoteHeaderControl = () => {
         </button>
 
         <div className="flex items-center gap-200">
-          <HeaderButton iconName={'delete'} onClick={handleNoteDelete} />
+          <BorderButton iconName={'delete'} onClick={handleNoteDelete} />
 
-          <HeaderButton iconName={'archive'} onClick={handleNoteArchive} />
+          <BorderButton iconName={'archive'} onClick={handleNoteArchive} />
 
           {/*TODO styles*/}
           <PrimaryButton

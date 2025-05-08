@@ -1,3 +1,5 @@
+import cn from 'classnames';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { iconComponents } from '../../../types/Icons/icons.ts';
@@ -8,13 +10,20 @@ import { iconComponents } from '../../../types/Icons/icons.ts';
  *
  */
 
-export const LogoHeader = () => {
+type Props = {
+  styles?: {
+    containerStyles?: string;
+    iconStyles?: string;
+  };
+};
+
+export const LogoHeader: React.FC<Props> = ({ styles }) => {
   const Icon = iconComponents['logo'];
   const navigate = useNavigate();
 
   return (
-    <div className="col-span-full flex shrink-0 items-center">
-      <Icon className={''} onClick={() => navigate('/')} />
+    <div className={cn(styles?.containerStyles, 'col-span-full flex shrink-0 items-center')}>
+      <Icon className={cn(styles?.iconStyles, '')} onClick={() => navigate('/')} />
     </div>
   );
 };

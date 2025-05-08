@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { EmailField } from '../../../common/EmailField';
-import { PrimaryButton } from '../../../common/PrimaryButton';
 import { PageFormWrapper } from '../../../common/PageFormWrapper';
 import { PasswordField } from '../../../common/PasswordField';
+import { PrimaryButton } from '../../../common/PrimaryButton';
 
 /*
  * TODO isPending state,
@@ -78,9 +78,7 @@ export const LoginForm = () => {
           styles: 'text-neutral-0 text-preset-3',
         }}
         onClick={handleLoginClick}
-        buttonStyles={
-          'focus:shadow-primarybutton-focus bg-blue-500 px-200 py-150 hover:bg-blue-700 focus:bg-blue-500'
-        }
+        buttonStyles={'justify-center items-center flex bg-blue-500 px-200 py-150'}
       />
     </PageFormWrapper>
   );

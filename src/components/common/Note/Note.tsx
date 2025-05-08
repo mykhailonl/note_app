@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router';
 
-import { NoteTags } from '../NoteTags';
-import { Divider } from '../Divider';
-
-import formatDate from '../../../utils/formatDate.ts';
-
 import { NoteType } from '../../../types/Notes/NotesType.ts';
+import formatDate from '../../../utils/formatDate.ts';
+import { Divider } from '../Divider';
+import { NoteTags } from '../NoteTags';
+
 
 type Props = {
   note: NoteType;
@@ -21,7 +20,7 @@ export const Note: React.FC<Props> = ({ note }) => {
   return (
     <>
       <div
-        className="flex flex-col items-start gap-150 self-stretch p-100"
+        className="flex flex-col items-start gap-150 self-stretch p-100 shrink-0"
         onClick={handleNoteClick}
       >
         <Link to={`notes/${note.id}`}>
