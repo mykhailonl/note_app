@@ -3,15 +3,20 @@ import React, { createContext, useEffect, useState } from 'react';
 import mockData from '../api/mockData.json';
 import { NoteTagType, NoteType } from '../types/Notes/NotesType.ts';
 
+
+export type NoteIdType = number;
+
 export interface NotesContextType {
   notes: NoteType[];
   getTags: () => NoteTagType[];
+  getById: (id: NoteIdType) => NoteType | undefined;
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const NotesContext = createContext<NotesContextType>({
   notes: [],
   getTags: () => [],
+  getById: () => undefined,
 });
 
 interface NotesProviderProps {
@@ -33,6 +38,10 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
 
   const deleteNote = () => {};
 
+  const getById = (targetId: NoteIdType) => {
+    return notes.find(note => note.id === targetId);
+  };
+
   const getTags = (): string[] => {
     const allTags = notes.flatMap((note) => note.tags);
 
@@ -47,6 +56,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
     archiveNote,
     deleteNote,
     getTags,
+    getById,
   };
 
   return <NotesContext.Provider value={value}>{children}</NotesContext.Provider>;
