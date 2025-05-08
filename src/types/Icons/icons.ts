@@ -3,6 +3,7 @@ import { ReactComponent as LeftArrowIcon } from '../../assets/images/icon-arrow-
 import { ReactComponent as ChevronRightIcon } from '../../assets/images/icon-chevron-right.svg';
 import { ReactComponent as ClockIcon } from '../../assets/images/icon-clock.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/images/icon-delete.svg';
+import { ReactComponent as GoogleIcon } from '../../assets/images/icon-google.svg';
 import { ReactComponent as HomeIcon } from '../../assets/images/icon-home.svg';
 import { ReactComponent as PlusIcon } from '../../assets/images/icon-plus.svg';
 import { ReactComponent as SearchIcon } from '../../assets/images/icon-search.svg';
@@ -23,6 +24,7 @@ export const iconComponents = {
   leftArrow: LeftArrowIcon,
   delete: DeleteIcon,
   chevronRight: ChevronRightIcon,
+  google: GoogleIcon,
 };
 
 // Type for icons based on dict keys
@@ -33,3 +35,6 @@ export type MenuIconName = Extract<IconName, 'home' | 'search' | 'archive' | 'ta
 
 // Type used in mapping inside Side Bar Icons to get text values with safety;
 export type SideBarIconName = Extract<IconName, 'home' | 'archive'>;
+
+// Type used in mapping inside Right Side Bar Icons to get text values with safety;
+export type RightSideBarIconName = Extract<IconName, 'delete' | 'archive'>;
