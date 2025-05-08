@@ -1,12 +1,11 @@
 import { useState } from 'react';
 
-import { ValidationError } from '../../types/PasswordInput/ValidationOptions.ts';
-
-import { PageWrapper } from '../../components/common/PageWrapper';
 import { FormHeader } from '../../components/common/FormHeader';
 import { PageFormWrapper } from '../../components/common/PageFormWrapper';
+import { PageWrapper } from '../../components/common/PageWrapper';
 import { PasswordField } from '../../components/common/PasswordField';
 import { PrimaryButton } from '../../components/common/PrimaryButton';
+import { ValidationError } from '../../types/PasswordInput/ValidationOptions.ts';
 
 // TODO handleFormSumbit,
 // error check on input field blur
@@ -62,7 +61,7 @@ export const ResetPasswordPage = () => {
           }}
           onClick={handleButtonClick}
           buttonStyles={
-            'focus:shadow-primarybutton-focus bg-blue-500 px-200 py-150 hover:bg-blue-700 focus:bg-blue-500'
+            'flex items-center justify-center bg-blue-500 px-200 py-150'
           }
         />
       </PageFormWrapper>

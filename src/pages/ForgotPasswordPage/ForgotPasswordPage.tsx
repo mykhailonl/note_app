@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { FormHeader } from '../../components/common/FormHeader';
 import { EmailField } from '../../components/common/EmailField';
-import { PrimaryButton } from '../../components/common/PrimaryButton';
-import { PageWrapper } from '../../components/common/PageWrapper';
+import { FormHeader } from '../../components/common/FormHeader';
 import { PageFormWrapper } from '../../components/common/PageFormWrapper';
+import { PageWrapper } from '../../components/common/PageWrapper';
+import { PrimaryButton } from '../../components/common/PrimaryButton';
 
 export const ForgotPasswordPage = () => {
   // TODO
@@ -46,9 +46,7 @@ export const ForgotPasswordPage = () => {
             styles: 'text-neutral-0 text-preset-3',
           }}
           onClick={handleButtonClick}
-          buttonStyles={
-            'focus:shadow-primarybutton-focus bg-blue-500 px-200 py-150 hover:bg-blue-700 focus:bg-blue-500'
-          }
+          buttonStyles={'flex justify-center items-center bg-blue-500 px-200 py-150'}
         />
       </PageFormWrapper>
     </PageWrapper>

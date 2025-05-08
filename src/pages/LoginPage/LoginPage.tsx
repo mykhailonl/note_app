@@ -1,8 +1,8 @@
-import { FormFooter } from '../../components/common/FormFooter';
-import { LoginForm } from '../../components/features/Login/LoginForm';
 import { Divider } from '../../components/common/Divider';
-import { PageWrapper } from '../../components/common/PageWrapper';
+import { FormFooter } from '../../components/common/FormFooter';
 import { FormHeader } from '../../components/common/FormHeader';
+import { PageWrapper } from '../../components/common/PageWrapper';
+import { LoginForm } from '../../components/features/Login/LoginForm';
 
 const LoginPage = () => {
   // TODO optimize func, create logic
