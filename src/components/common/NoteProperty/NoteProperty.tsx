@@ -23,13 +23,13 @@ export const NoteProperty: React.FC<Props> = ({ tags, lastEdited, iconName }) =>
         isTablet && 'text-preset-5',
       )}
     >
-      <div className="gap-075 py-050 flex min-w-[115px] grow items-center text-neutral-700">
+      <div className="gap-075 py-050 text-text-secondary flex min-w-[115px] grow items-center">
         <Icon className="h-4 w-4" />
 
         <span className="">{tags ? 'Tags' : 'Last edited'}</span>
       </div>
 
-      <div className={cn('grow', tags ? 'text-neutral-950' : 'text-neutral-700')}>
+      <div className={cn('grow', tags ? 'text-text-primary' : 'text-text-secondary')}>
         {tags ? tags : lastEdited}
       </div>
     </div>

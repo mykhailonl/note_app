@@ -1,39 +1,35 @@
-import React, { useMemo } from 'react';
-import { Link } from 'react-router';
+import cn from 'classnames';
+import { useMemo } from 'react';
+import { NavLink } from 'react-router';
 
 import { NoteType } from '../../../types/Notes/NotesType.ts';
 import formatDate from '../../../utils/formatDate.ts';
-import { Divider } from '../Divider';
 import { NoteTags } from '../NoteTags';
 
-
-type Props = {
-  note: NoteType;
-};
-
-// TODO move Divider from Note to map in NoteList
-export const Note: React.FC<Props> = ({ note }) => {
+export const Note = ({ note, isActive }: { note: NoteType; isActive: boolean }) => {
   const formattedDate = useMemo(() => formatDate(note.lastEdited), [note]);
 
   const handleNoteClick = () => {};
 
   return (
-    <>
-      <div
-        className="flex flex-col items-start gap-150 self-stretch p-100 shrink-0"
-        onClick={handleNoteClick}
+    <div
+      className={cn(
+        isActive && 'bg-bg-secondary rounded-6',
+        'text-text-primary flex shrink-0 flex-col items-start gap-150 self-stretch p-100',
+      )}
+      onClick={handleNoteClick}
+    >
+      <NavLink
+        to={`notes/${note.id}`}
+        className="focus-visible:shadow-defaultFocus rounded-8 outline-none"
       >
-        <Link to={`notes/${note.id}`}>
-          <h1 className="text-preset-3 w-full font-sans text-neutral-950">{note.title}</h1>
-        </Link>
+        <h1 className="text-preset-3 w-full">{note.title}</h1>
+      </NavLink>
 
-        <NoteTags tags={note.tags} />
+      <NoteTags tags={note.tags} />
 
-        <span className="text-preset-6 text-neutral-950">{formattedDate}</span>
-      </div>
-
-      <Divider />
-    </>
+      <span className="text-preset-6">{formattedDate}</span>
+    </div>
   );
 };
 

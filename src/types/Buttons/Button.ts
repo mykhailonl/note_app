@@ -16,4 +16,5 @@ export interface Button {
     name: IconName;
     styles?: string;
   };
+  form?: string;
 }

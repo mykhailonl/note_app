@@ -29,13 +29,13 @@ export const SideBarLink: React.FC<Props> = ({ href, iconName, altText = '', sty
 
       return (
         <div className={cn('flex items-center justify-center gap-100 self-stretch px-150 py-125')}>
-          <div className={cn(isActive ? 'text-blue-500' : 'text-neutral-700')}>
+          <div className={isActive ? 'text-tag-icon-bg-active' : 'text-tag-icon-bg'}>
             <Icon className="h-250 w-250" aria-label={altText} />
           </div>
 
           <span className="text-preset-4 flex grow self-center">{displayText}</span>
 
-          {isActive && <IconChevron />}
+          {isActive && <IconChevron className="h-250 w-250" />}
         </div>
       );
     },
@@ -45,8 +45,12 @@ export const SideBarLink: React.FC<Props> = ({ href, iconName, altText = '', sty
   return (
     <NavLink
       to={href}
-      className={({ isActive, isPending }) =>
-        cn('', styles?.linkStyles, isPending ? '' : isActive ? 'bg-neutral-100' : '')
+      className={({ isActive }) =>
+        cn(
+          styles?.linkStyles,
+          isActive ? 'bg-tag-bg-active' : 'bg-tag-bg',
+          'focus-visible:shadow-defaultFocus rounded-8 outline-none',
+        )
       }
     >
       {renderLink}

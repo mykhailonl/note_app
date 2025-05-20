@@ -8,15 +8,19 @@ export const SideBarRight = () => {
   return (
     <div className="mr-400 flex w-[240px] shrink-0 flex-col gap-150 py-250 pl-200">
       <BorderButton
-        iconName={'archive'}
+        icon={{
+          name: 'archive',
+        }}
         onClick={handleNoteArchive}
-        styles={{ buttonStyles: 'border border-neutral-300 gap-100 rounded-8 text-neutral-950' }}
+        buttonStyles={'border gap-100 rounded-8'}
       />
 
       <BorderButton
-        iconName={'delete'}
+        icon={{
+          name: 'delete',
+        }}
         onClick={handleNoteDelete}
-        styles={{ buttonStyles: 'border border-neutral-300 gap-100 rounded-8' }}
+        buttonStyles={'border gap-100 rounded-8'}
       />
     </div>
   );

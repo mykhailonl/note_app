@@ -7,7 +7,7 @@ export const NoteViewManager = () => {
   return (
     <div className="flex flex-1 grow">
       {noteId && (
-        <div className="w-full border-r border-neutral-200">
+        <div className="w-full border-r border-divider-color">
           <Outlet />
         </div>
       )}

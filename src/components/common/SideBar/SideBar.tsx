@@ -27,7 +27,7 @@ export const SideBar = () => {
   };
 
   return (
-    <div className="flex flex-col gap-200 border-r border-neutral-200 px-200 py-150">
+    <div className="border-divider-color flex flex-col gap-200 border-r px-200 py-150">
       <div className="py-150">
         <LogoHeader />
       </div>

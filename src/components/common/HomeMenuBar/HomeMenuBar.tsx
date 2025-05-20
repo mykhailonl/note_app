@@ -12,12 +12,14 @@ const NAV_ITEMS = [
   { href: '/settings', iconName: 'settings' },
 ] as const;
 
+// todo create shadow
+
 export const HomeMenuBar = React.memo(() => {
   const { isTablet } = useDevice();
   const showText = isTablet;
 
   return (
-    <nav className="tablet:tablet-grid mobile-grid shadow-menubar bg-neutral-0 fixed bottom-0 left-0 z-2 border-t border-neutral-200">
+    <nav className="tablet:tablet-grid mobile-grid shadow-menubar bg-bg-primary fixed bottom-0 left-0 z-2 border-t border-divider-color">
       <div className="tablet:justify-between col-span-full flex w-full content-center self-stretch py-150">
         {NAV_ITEMS.map((item, index) => (
           <React.Fragment key={item.href}>

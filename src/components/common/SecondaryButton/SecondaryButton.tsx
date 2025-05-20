@@ -4,6 +4,7 @@ import React from 'react';
 import { Button } from '../../../types/Buttons/Button.ts';
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
 
+// TODO check all colors on hover/active etc light and dark theme
 export const SecondaryButton: React.FC<Button> = ({
   buttonText,
   type = 'button',
@@ -19,12 +20,12 @@ export const SecondaryButton: React.FC<Button> = ({
       type={type}
       onClick={onClick}
       className={cn(
-        'hover:border-neutral-300 hover:text-neutral-950',
+        'hover:border-secondaryButton-hoverBorder hover:text-text-primary cursor-pointer',
         buttonStyles,
-        'rounded-8 focus:shadow-button-focus border-neutral-100 outline-none',
+        'rounded-8 focus-visible:shadow-button-focus border-secondaryButton-bg bg-secondaryButton-bg outline-none',
         disabled
-          ? 'border border-neutral-50 bg-neutral-50 text-neutral-300'
-          : 'focus:shadow-button-focus hover:bg-neutral-0 border text-neutral-600 focus:border-neutral-950',
+          ? 'border-secondaryButton-disabledBorder bg-input-disabled text-input-textDisabled border'
+          : 'focus-visible:shadow-button-focus hover:bg-bg-primary text-secondaryButton-text border focus-visible:border-neutral-950',
       )}
       disabled={disabled}
     >

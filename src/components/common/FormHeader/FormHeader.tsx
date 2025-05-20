@@ -7,14 +7,14 @@ import { LogoHeader } from '../LogoHeader';
 export const FormHeader: React.FC<FormHeaderType> = ({ styles = {}, textBlock }) => {
   return (
     <header className={cn('flex flex-col gap-y-4', styles)}>
-      <LogoHeader styles={{ containerStyles: 'justify-center pb-100' }} />
+      <LogoHeader styles={{ containerStyles: 'justify-center pb-100 text-text-primary' }} />
 
       <div className={cn('flex flex-col gap-y-2 text-center', textBlock.styles)}>
-        <h1 className={cn('text-preset-1 font-sans text-neutral-950', textBlock.headerStyles)}>
+        <h1 className={cn('text-preset-1 text-text-primary', textBlock.headerStyles)}>
           {textBlock.headerText}
         </h1>
 
-        <p className={cn('text-preset-5 font-normal text-neutral-600', textBlock.pStyles)}>
+        <p className={cn('text-preset-5 font-normal text-text-secondary', textBlock.pStyles)}>
           {textBlock.pText}
         </p>
       </div>

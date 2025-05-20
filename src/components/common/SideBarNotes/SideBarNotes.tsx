@@ -8,7 +8,7 @@ export const SideBarNotes = () => {
   const handleButtonClick = () => {};
 
   return (
-    <div className="flex border-r border-neutral-200 px-400 py-250">
+    <div className="flex border-r border-divider-color px-400 py-250">
       <div className="flex flex-col gap-200">
         <PrimaryButton
           buttonText={{

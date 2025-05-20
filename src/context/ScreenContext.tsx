@@ -14,11 +14,7 @@ export const DeviceContext = createContext<DeviceContextType>({
   isDesktop: false,
 });
 
-interface DeviceProviderProps {
-  children: React.ReactNode;
-}
-
-export const DeviceProvider: React.FC<DeviceProviderProps> = ({ children }) => {
+export const DeviceProvider = ({ children }: {children: React.ReactNode}) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
   const isDesktop = useMediaQuery({ minWidth: 1440 });
