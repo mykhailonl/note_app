@@ -1,10 +1,9 @@
 import cn from 'classnames';
-import React from 'react';
 
-import { FormHeaderType } from '../../../types/Forms/FormHeader.ts';
+import { FormHeaderType } from '../../../types/Forms/Form.ts';
 import { LogoHeader } from '../LogoHeader';
 
-export const FormHeader: React.FC<FormHeaderType> = ({ styles = {}, textBlock }) => {
+export const FormHeader = ({ styles = '', textBlock }: FormHeaderType) => {
   return (
     <header className={cn('flex flex-col gap-y-4', styles)}>
       <LogoHeader styles={{ containerStyles: 'justify-center pb-100 text-text-primary' }} />
@@ -14,12 +13,10 @@ export const FormHeader: React.FC<FormHeaderType> = ({ styles = {}, textBlock })
           {textBlock.headerText}
         </h1>
 
-        <p className={cn('text-preset-5 font-normal text-text-secondary', textBlock.pStyles)}>
+        <p className={cn('text-preset-5 text-text-secondary font-normal', textBlock.pStyles)}>
           {textBlock.pText}
         </p>
       </div>
     </header>
   );
 };
-
-export default FormHeader;

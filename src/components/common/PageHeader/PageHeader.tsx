@@ -6,7 +6,7 @@ import { iconComponents } from '../../../types/Icons/IconsType.ts';
 import getPageTitle from '../../../utils/getPageTitle.ts';
 import { TopBarSearch } from '../TopBarSearch';
 
-export const PageHeader: React.FC = () => {
+export const PageHeader = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   const pathname = location.pathname;
@@ -54,5 +54,3 @@ export const PageHeader: React.FC = () => {
     </header>
   );
 };
-
-export default PageHeader;

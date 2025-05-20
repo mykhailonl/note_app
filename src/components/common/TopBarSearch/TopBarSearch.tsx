@@ -1,14 +1,7 @@
-import React from 'react';
-
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
+import { TopBarSearchProps } from '../../../types/TopBar/TopBar.ts';
 
-// TODO check onChange type
-type Props = {
-  value: string;
-  onChange: React.Dispatch<React.ChangeEvent<HTMLInputElement>>;
-};
-
-export const TopBarSearch = ({ value, onChange }: Props) => {
+export const TopBarSearch = ({ value, onChange }: TopBarSearchProps) => {
   const Icon = iconComponents['search'];
 
   return (
@@ -26,5 +19,3 @@ export const TopBarSearch = ({ value, onChange }: Props) => {
     </div>
   );
 };
-
-export default TopBarSearch;

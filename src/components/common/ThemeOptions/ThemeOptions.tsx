@@ -13,11 +13,11 @@ import { ThemeOption } from '../ThemeOption';
  * store them at the backend as well?
  * */
 
-export const ThemeOptions: React.FC<ThemeOptionsType> = ({
+export const ThemeOptions = ({
   themeType,
   currentThemeValue,
   setNewThemeValue,
-}) => {
+}: ThemeOptionsType) => {
   const isThemeSelected = (themeName: ThemeValueType) => {
     return themeName === currentThemeValue;
   };

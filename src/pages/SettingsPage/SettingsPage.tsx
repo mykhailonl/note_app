@@ -1,5 +1,5 @@
 import { SettingsList } from '../../components/common/SettingsList';
-import { SETTINGS } from '../../types/Settings/SettingsType.ts';
+import { SETTINGS } from '../../types/Settings/Settings.ts';
 
 export const SettingsPage = () => {
   return (

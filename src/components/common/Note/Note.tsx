@@ -2,11 +2,11 @@ import cn from 'classnames';
 import { useMemo } from 'react';
 import { NavLink } from 'react-router';
 
-import { NoteType } from '../../../types/Notes/NotesType.ts';
+import { NoteProps } from '../../../types/Notes/Notes.ts';
 import formatDate from '../../../utils/formatDate.ts';
 import { NoteTags } from '../NoteTags';
 
-export const Note = ({ note, isActive }: { note: NoteType; isActive: boolean }) => {
+export const Note = ({ note, isActive }: NoteProps) => {
   const formattedDate = useMemo(() => formatDate(note.lastEdited), [note]);
 
   const handleNoteClick = () => {};
@@ -32,5 +32,3 @@ export const Note = ({ note, isActive }: { note: NoteType; isActive: boolean }) 
     </div>
   );
 };
-
-export default Note;

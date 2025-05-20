@@ -3,13 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { iconComponents, SettingsIconName } from '../../../types/Icons/IconsType.ts';
+import { SettingLinkProps } from '../../../types/Settings/Settings.ts';
 
-type Props = {
-  href: string;
-  iconName: SettingsIconName;
-};
-
-export const SettingLink: React.FC<Props> = ({ href, iconName }) => {
+export const SettingLink = ({ href, iconName }: SettingLinkProps) => {
   const renderLink = React.useCallback(
     ({ isActive }: { isActive: boolean; isPending: boolean }) => {
       const Icon = iconComponents[iconName];
@@ -53,4 +49,3 @@ export const SettingLink: React.FC<Props> = ({ href, iconName }) => {
 };
 
 SettingLink.displayName = 'SettingLink';
-export default SettingLink;

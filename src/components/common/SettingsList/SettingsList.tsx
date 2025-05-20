@@ -1,14 +1,10 @@
 import React from 'react';
 
-import { SettingsIconName } from '../../../types/Icons/IconsType.ts';
+import { SettingsListProps } from '../../../types/Settings/Settings.ts';
 import { Divider } from '../Divider';
 import { SettingLink } from '../SettingLink';
 
-type SettingsListProps = {
-  settings: Array<{ href: string; iconName: SettingsIconName }>
-}
-
-export const SettingsList: React.FC<SettingsListProps> = ({ settings }) => {
+export const SettingsList = ({ settings }: SettingsListProps) => {
   return (
     <>
       {settings.map((item, index) => (

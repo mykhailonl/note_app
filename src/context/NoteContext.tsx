@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 
 import mockData from '../api/mockData.json';
-import { NoteTagType, NoteType } from '../types/Notes/NotesType.ts';
+import { NoteTagType, NoteType } from '../types/Notes/Notes.ts';
 
 export type NoteIdType = number;
 

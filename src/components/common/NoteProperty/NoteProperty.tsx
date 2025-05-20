@@ -1,17 +1,10 @@
 import cn from 'classnames';
-import React from 'react';
 
 import { useDevice } from '../../../hooks/useDevice.ts';
-import { iconComponents, IconName } from '../../../types/Icons/IconsType.ts';
-import { NoteTagType } from '../../../types/Notes/NotesType.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
+import { NotePropertyProps } from '../../../types/Notes/Notes.ts';
 
-type Props = {
-  iconName: IconName;
-  tags?: NoteTagType;
-  lastEdited?: string;
-};
-
-export const NoteProperty: React.FC<Props> = ({ tags, lastEdited, iconName }) => {
+export const NoteProperty = ({ tags, lastEdited, iconName }: NotePropertyProps) => {
   const { isMobile, isTablet } = useDevice();
   const Icon = iconComponents[iconName];
 
@@ -35,5 +28,3 @@ export const NoteProperty: React.FC<Props> = ({ tags, lastEdited, iconName }) =>
     </div>
   );
 };
-
-export default NoteProperty;

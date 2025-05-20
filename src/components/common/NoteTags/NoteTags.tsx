@@ -1,7 +1,7 @@
-import { NoteTagType } from '../../../types/Notes/NotesType.ts';
+import { NoteTagsProps } from '../../../types/Notes/Notes.ts';
 import { NoteTag } from '../NoteTag';
 
-export const NoteTags = ({ tags }: { tags: NoteTagType[] }) => {
+export const NoteTags = ({ tags }: NoteTagsProps) => {
   return (
     <div className="flex flex-wrap content-center items-center gap-1 self-stretch">
       {tags.map((tag) => (
@@ -10,5 +10,3 @@ export const NoteTags = ({ tags }: { tags: NoteTagType[] }) => {
     </div>
   );
 };
-
-export default NoteTags;

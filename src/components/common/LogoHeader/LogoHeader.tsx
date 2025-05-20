@@ -1,23 +1,10 @@
 import cn from 'classnames';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { LogoHeaderProps } from '../../../types/Header/Header.ts';
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
 
-/*
- * TODO add link on logo, change to Link etc,
- *  fix on other pages
- *
- */
-
-type Props = {
-  styles?: {
-    containerStyles?: string;
-    iconStyles?: string;
-  };
-};
-
-export const LogoHeader: React.FC<Props> = ({ styles }) => {
+export const LogoHeader = ({ styles }: LogoHeaderProps) => {
   const Icon = iconComponents['logo'];
   const navigate = useNavigate();
 

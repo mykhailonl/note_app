@@ -34,4 +34,3 @@ export const HomeMenuBar = React.memo(() => {
 });
 
 HomeMenuBar.displayName = 'HomeMenuBar';
-export default HomeMenuBar;

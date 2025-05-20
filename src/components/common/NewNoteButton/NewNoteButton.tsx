@@ -1,17 +1,9 @@
 import cn from 'classnames';
-import React from 'react';
 
-import { iconComponents, IconName } from '../../../types/Icons/IconsType.ts';
+import { NewNoteButtonProps } from '../../../types/Buttons/Button.ts';
+import { iconComponents } from '../../../types/Icons/IconsType.ts';
 
-type Props = {
-  iconName: IconName;
-  styles?: {
-    buttonStyles?: string;
-    iconStyles?: string;
-  };
-};
-
-export const NewNoteButton: React.FC<Props> = ({ iconName, styles }) => {
+export const NewNoteButton = ({ iconName, styles }: NewNoteButtonProps) => {
   const Icon = iconComponents[iconName];
 
   return (
@@ -25,5 +17,3 @@ export const NewNoteButton: React.FC<Props> = ({ iconName, styles }) => {
     </button>
   );
 };
-
-export default NewNoteButton;

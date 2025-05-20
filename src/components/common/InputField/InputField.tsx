@@ -1,17 +1,11 @@
 import cn from 'classnames';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
 import { InputFieldType } from '../../../types/Input/InputFieldType.ts';
 
-export const InputField: React.FC<InputFieldType> = ({
-  containerStyles,
-  label,
-  input,
-  hint,
-  validation,
-}) => {
+export const InputField = ({ containerStyles, label, input, hint, validation }: InputFieldType) => {
   //#region conditions
   const showLeftInputIcon = input.inputIconShown === 'left' || input.inputIconShown === 'both';
   const showRightInputIcon = input.inputIconShown === 'right' || input.inputIconShown === 'both';
@@ -53,7 +47,7 @@ export const InputField: React.FC<InputFieldType> = ({
       <div
         className={cn(
           input.inputContainerStyles,
-          'rounded-8 focus-within:shadow-defaultFocus flex items-center gap-100 border px-200 py-150 focus-within:border-neutral-950 hover:bg-input-hover',
+          'rounded-8 focus-within:shadow-defaultFocus hover:bg-input-hover flex items-center gap-100 border px-200 py-150 focus-within:border-neutral-950',
           input.disabled ? 'bg-input-disabled text-input-textDisabled' : 'bg-bg-primary',
           validation.error ? 'border-red-500' : 'border-input-border',
         )}

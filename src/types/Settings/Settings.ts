@@ -17,3 +17,12 @@ export type HeaderTextMapType = Record<SettingPathType, string>;
 
 // Object to map paragraphs
 export type ParagraphTextMapType = Record<GlobalSettingType, string>;
+
+export interface SettingLinkProps {
+  href: string;
+  iconName: SettingsIconName;
+}
+
+export interface SettingsListProps {
+  settings: Array<{ href: string; iconName: SettingsIconName }>;
+}

@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 
 import { useNotes } from '../../../hooks/useNotes.ts';
-import { NoteTagType } from '../../../types/Notes/NotesType.ts';
+import { NoteTagType } from '../../../types/Notes/Notes.ts';
 import { Divider } from '../Divider';
 import { LogoHeader } from '../LogoHeader';
 import SideBarPages from '../SideBarPages/SideBarPages.tsx';
@@ -57,5 +57,3 @@ export const SideBar = () => {
     </div>
   );
 };
-
-export default SideBar;

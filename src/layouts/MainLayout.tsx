@@ -1,9 +1,8 @@
 import cn from 'classnames';
 import React from 'react';
 
-import { useTheme } from '../../../hooks/useTheme.ts';
+import { useTheme } from '../hooks/useTheme.ts';
 
-// TODO move to layouts?
 // TODO change tag from main to smth else?
 
 // TODO remove theme button
@@ -31,5 +30,3 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
     </main>
   );
 };
-
-export default MainLayout;
