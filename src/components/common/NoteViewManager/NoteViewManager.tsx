@@ -14,5 +14,3 @@ export const NoteViewManager = () => {
     </div>
   );
 };
-
-export default NoteViewManager;

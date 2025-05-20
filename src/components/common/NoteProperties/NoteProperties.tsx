@@ -1,17 +1,12 @@
 import React, { useMemo } from 'react';
 
-import { NoteTagType } from '../../../types/Notes/NotesType.ts';
+import { NotePropertiesProps } from '../../../types/Notes/Notes.ts';
 import formatDate from '../../../utils/formatDate.ts';
 import { NoteProperty } from '../NoteProperty';
 
-type Props = {
-  tags: NoteTagType[];
-  lastEdited: string;
-};
-
 // TODO check if memo is right
 
-export const NoteProperties: React.FC<Props> = ({ tags, lastEdited }) => {
+export const NoteProperties: React.FC<NotePropertiesProps> = ({ tags, lastEdited }) => {
   const formattedTags = useMemo(() => tags.join(', '), [tags]);
   const formattedDate = useMemo(() => formatDate(lastEdited), [lastEdited]);
 
@@ -23,5 +18,3 @@ export const NoteProperties: React.FC<Props> = ({ tags, lastEdited }) => {
     </div>
   );
 };
-
-export default NoteProperties;

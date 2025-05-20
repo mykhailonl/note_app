@@ -2,22 +2,15 @@ import cn from 'classnames';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { NoteType } from '../../../types/Notes/NotesType.ts';
+import { NoteListProps } from '../../../types/Notes/Notes.ts';
 import { Divider } from '../Divider';
 import { Note } from '../Note';
 
-type Props = {
-  userNotes: NoteType[];
-  styles?: {
-    containerStyles?: string;
-  };
-};
-
-export const NoteList = ({ userNotes, styles }: Props) => {
+export const NoteList = ({ userNotes, styles }: NoteListProps) => {
   const { noteId } = useParams();
 
   return (
-    <div className={cn('flex flex-col self-stretch gap-1', styles?.containerStyles)}>
+    <div className={cn('flex flex-col gap-1 self-stretch', styles?.containerStyles)}>
       {userNotes.map((note, index) => {
         const isActive = noteId ? +noteId === note.id : false;
         const isNextActive = noteId ? +noteId === note.id + 1 : false;

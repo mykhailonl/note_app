@@ -1,25 +1,16 @@
 import cn from 'classnames';
-import React from 'react';
 
 import { useDevice } from '../../../hooks/useDevice.ts';
-import { Button } from '../../../types/Buttons/Button.ts';
+import { BorderButtonProps } from '../../../types/Buttons/Button.ts';
 import { iconComponents, RightSideBarIconName } from '../../../types/Icons/IconsType.ts';
 
-// todo move to types
-interface BorderButtonProps extends Omit<Button, 'icon' | 'buttonText'> {
-  icon: {
-    name: RightSideBarIconName;
-    styles?: string;
-  };
-}
-
-export const BorderButton: React.FC<BorderButtonProps> = ({
+export const BorderButton = ({
   type = 'button',
   onClick,
   buttonStyles,
   disabled,
   icon,
-}) => {
+}: BorderButtonProps) => {
   const { isDesktop } = useDevice();
   const Icon = icon && iconComponents[icon.name];
 
@@ -52,5 +43,3 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
     </button>
   );
 };
-
-export default BorderButton;

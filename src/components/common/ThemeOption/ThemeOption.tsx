@@ -1,17 +1,10 @@
 import cn from 'classnames';
-import React from 'react';
 
 import { useTheme } from '../../../hooks/useTheme.ts';
 import { iconComponents, RadioButtonsIconName } from '../../../types/Icons/IconsType.ts';
 import { ThemeOptionComponentType } from '../../../types/Theme/ThemeType.ts';
 
-//todo find a way to style radio buttons in tw
-
-export const ThemeOption: React.FC<ThemeOptionComponentType> = ({
-  themeOption,
-  isChecked,
-  onChange,
-}) => {
+export const ThemeOption = ({ themeOption, isChecked, onChange }: ThemeOptionComponentType) => {
   const { colorTheme } = useTheme();
   const isDarkTheme = colorTheme === 'darkTheme';
 
@@ -27,6 +20,7 @@ export const ThemeOption: React.FC<ThemeOptionComponentType> = ({
   const RadioIcon = iconComponents[radioIconName];
   const Icon = iconComponents[themeOption.iconName];
   //#endregion
+
   const inputId = `theme-option-${themeOption.iconName}`;
 
   return (

@@ -35,5 +35,3 @@ export const SideBarNotes = () => {
     </div>
   );
 };
-
-export default SideBarNotes;

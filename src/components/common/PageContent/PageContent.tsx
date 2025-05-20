@@ -1,6 +1,6 @@
 import { useLocation, useParams } from 'react-router-dom';
 
-import { SETTINGS } from '../../../types/Settings/SettingsType.ts';
+import { SETTINGS } from '../../../types/Settings/Settings.ts';
 import { NoteViewManager } from '../NoteViewManager';
 import { SettingsList } from '../SettingsList';
 import { SettingsViewManager } from '../SettingsViewManager';

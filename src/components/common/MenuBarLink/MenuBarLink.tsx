@@ -3,22 +3,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { iconComponents, MenuIconName } from '../../../types/Icons/IconsType.ts';
-
-type Props = {
-  href: string;
-  iconName: MenuIconName;
-  altText?: string;
-  showText?: boolean;
-  styles?: {
-    linkStyles?: string;
-    imgStyles?: string;
-  };
-};
+import { MenuBarLinkProps } from '../../../types/Links/Links.ts';
 
 // TODO style pending state too
 
-export const MenuBarLink: React.FC<Props> = React.memo(
-  ({ href, iconName, altText = '', showText = false, styles }) => {
+export const MenuBarLink = React.memo(
+  ({ href, iconName, altText = '', showText = false, styles }: MenuBarLinkProps) => {
     const renderLink = React.useCallback(
       ({ isActive }: { isActive: boolean; isPending: boolean }) => {
         const Icon = iconComponents[iconName];
@@ -66,4 +56,3 @@ export const MenuBarLink: React.FC<Props> = React.memo(
 );
 
 MenuBarLink.displayName = 'MenuBarLink';
-export default MenuBarLink;

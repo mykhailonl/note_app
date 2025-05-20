@@ -3,18 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { iconComponents, SideBarIconName } from '../../../types/Icons/IconsType.ts';
+import { SideBarLinkProps } from '../../../types/Links/Links.ts';
 
-type Props = {
-  href: string;
-  iconName: SideBarIconName;
-  altText?: string;
-  styles?: {
-    linkStyles?: string;
-    ingStyles?: string;
-  };
-};
-
-export const SideBarLink: React.FC<Props> = ({ href, iconName, altText = '', styles }) => {
+export const SideBarLink = ({ href, iconName, altText = '', styles }: SideBarLinkProps) => {
   const renderLink = React.useCallback(
     ({ isActive }: { isActive: boolean; isPending: boolean }) => {
       const Icon = iconComponents[iconName];
@@ -57,5 +48,3 @@ export const SideBarLink: React.FC<Props> = ({ href, iconName, altText = '', sty
     </NavLink>
   );
 };
-
-export default SideBarLink;

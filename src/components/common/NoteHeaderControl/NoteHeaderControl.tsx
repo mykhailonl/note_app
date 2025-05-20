@@ -81,5 +81,3 @@ export const NoteHeaderControl = () => {
     </div>
   );
 };
-
-export default NoteHeaderControl;

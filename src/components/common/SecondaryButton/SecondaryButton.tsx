@@ -1,18 +1,16 @@
 import cn from 'classnames';
-import React from 'react';
 
 import { Button } from '../../../types/Buttons/Button.ts';
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
 
-// TODO check all colors on hover/active etc light and dark theme
-export const SecondaryButton: React.FC<Button> = ({
+export const SecondaryButton = ({
   buttonText,
   type = 'button',
   onClick,
-  buttonStyles = {},
+  buttonStyles = '',
   disabled = false,
   icon,
-}) => {
+}: Button) => {
   const Icon = icon && iconComponents[icon.name];
 
   return (

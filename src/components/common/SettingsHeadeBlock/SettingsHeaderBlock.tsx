@@ -6,7 +6,7 @@ import {
   HeaderTextMapType,
   ParagraphTextMapType,
   SettingPathType,
-} from '../../../types/Settings/SettingsType.ts';
+} from '../../../types/Settings/Settings.ts';
 import { BackButton } from '../BackButton';
 
 export const SettingsHeaderBlock = () => {

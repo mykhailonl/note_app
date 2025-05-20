@@ -1,32 +1,33 @@
 import cn from 'classnames';
-import React from 'react';
 
 import { Button } from '../../../types/Buttons/Button.ts';
 
-export const PrimaryButton: React.FC<Button> = ({
+export const PrimaryButton = ({
   buttonText,
   type = 'button',
   onClick,
   disabled = false,
-  buttonStyles = {},
+  buttonStyles = '',
   extraSymbol,
   form,
-}) => {
+}: Button) => {
   return (
     <button
       type={type}
       onClick={onClick}
       className={cn(
-        'rounded-8 border border-blue-500 outline-none cursor-pointer',
+        'rounded-8  border border-blue-500 outline-none',
         buttonStyles,
         disabled
-          ? 'border-neutral-100 bg-neutral-100'
-          : 'focus-visible:shadow-defaultFocus hover:bg-blue-700',
+          ? 'bg-primaryButton-disabled border-primaryButton-disabled cursor-not-allowed'
+          : 'focus-visible:shadow-defaultFocus hover:bg-blue-700 cursor-pointer',
       )}
       disabled={disabled}
       form={form}
     >
-      <span className={cn(disabled && 'text-neutral-300', 'flex', buttonText.styles)}>
+      <span
+        className={cn(disabled && 'text-primaryButton-disabledText', 'flex', buttonText.styles)}
+      >
         {extraSymbol && <span className="align-text-top">+ </span>}
         {buttonText.textValue}
       </span>

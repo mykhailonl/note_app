@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconName } from '../Icons/IconsType.ts';
+import { IconName, RightSideBarIconName } from '../Icons/IconsType.ts';
 
 export interface Button {
   buttonText: {
@@ -17,4 +17,29 @@ export interface Button {
     styles?: string;
   };
   form?: string;
+}
+
+export interface BackButtonProps {
+  styles?: {
+    containerStyle?: string;
+    iconStyle?: string;
+    textStyle?: string;
+  };
+  buttonText?: string;
+  href: string;
+}
+
+export interface BorderButtonProps extends Omit<Button, 'icon' | 'buttonText'> {
+  icon: {
+    name: RightSideBarIconName;
+    styles?: string;
+  };
+}
+
+export interface NewNoteButtonProps {
+  iconName: IconName;
+  styles?: {
+    buttonStyles?: string;
+    iconStyles?: string;
+  };
 }

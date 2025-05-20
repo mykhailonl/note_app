@@ -25,5 +25,3 @@ export const SideBarRight = () => {
     </div>
   );
 };
-
-export default SideBarRight;

@@ -41,6 +41,8 @@
   --divider-color: var(--color-neutral-200);
 
   /* Button styles */
+  --primaryButton-disabled: var(--color-neutral-100);
+  --primaryButton-disabledText: var(--color-neutral-300);
   --borderButton-borderBg: var(--color-neutral-300);
   --borderButton-hoverBg: var(--color-neutral-300);
   --secondaryButton-bg: var(--color-neutral-100);
@@ -90,6 +92,8 @@
   --divider-color: var(--color-neutral-800);
 
   /* Button styles */
+  --primaryButton-disabled: var(--color-neutral-600);
+  --primaryButton-disabledText: var(--color-neutral-800);
   --borderButton-borderBg: var(--color-neutral-600);
   --borderButton-hoverBg: var(--color-neutral-600);
   --secondaryButton-bg: var(--color-neutral-800);
@@ -139,6 +143,8 @@
   --color-divider-color: var(--divider-color);
 
   /* Button styles */
+  --color-primaryButton-disabled: var(--primaryButton-disabled);
+  --color-primaryButton-disabledText: var(--primaryButton-disabledText);
   --color-borderButton-borderBg: var(--borderButton-borderBg);
   --color-borderButton-hoverBg: var(--borderButton-hoverBg);
   --color-secondaryButton-bg: var(--secondaryButton-bg);

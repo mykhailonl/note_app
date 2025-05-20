@@ -1,25 +1,11 @@
 import cn from 'classnames';
-import React from 'react';
 
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
-import { NoteTagType } from '../../../types/Notes/NotesType.ts';
+import { SideBarTagProps } from '../../../types/SideBar/SideBar.ts';
 
-type Props = {
-  tag: {
-    tagName: NoteTagType;
-  };
-  styles?: {
-    containerStyles?: string;
-    iconStyles?: string;
-    textStyles?: string;
-  };
-  onClick: (t: NoteTagType) => void;
-  isActive: boolean;
-};
+// TODO add hover effect
 
-// TOD) add hover effect, change pointer?
-
-export const SideBarTag: React.FC<Props> = ({ tag, styles, onClick, isActive }) => {
+export const SideBarTag = ({ tag, styles, onClick, isActive }: SideBarTagProps) => {
   const Icon = iconComponents['tag'];
   const IconChevron = iconComponents['chevronRight'];
 
@@ -27,7 +13,7 @@ export const SideBarTag: React.FC<Props> = ({ tag, styles, onClick, isActive }) 
     <button
       onClick={() => onClick(tag.tagName)}
       className={cn(
-        'rounded-8 flex w-[240px] items-center gap-100 self-stretch px-150 py-125 outline-none focus-visible:shadow-defaultFocus',
+        'rounded-8 focus-visible:shadow-defaultFocus flex w-[240px] cursor-pointer items-center gap-100 self-stretch px-150 py-125 outline-none',
         isActive ? 'bg-tag-bg-active' : 'bg-tag-bg',
         styles?.containerStyles,
       )}
@@ -37,9 +23,13 @@ export const SideBarTag: React.FC<Props> = ({ tag, styles, onClick, isActive }) 
       </div>
 
       <div className="grow self-end">
-        <span className={cn(
-          isActive ? 'text-tag-text-active' : 'text-tag-text',
-          'text-preset-4 flex text-sidebar-text', styles?.textStyles)}>
+        <span
+          className={cn(
+            isActive ? 'text-tag-text-active' : 'text-tag-text',
+            'text-preset-4 text-sidebar-text flex',
+            styles?.textStyles,
+          )}
+        >
           {tag.tagName}
         </span>
       </div>
@@ -52,5 +42,3 @@ export const SideBarTag: React.FC<Props> = ({ tag, styles, onClick, isActive }) 
     </button>
   );
 };
-
-export default SideBarTag;
