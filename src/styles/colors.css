@@ -1,0 +1,176 @@
+@theme {
+  --color-neutral-950: #0E121B;
+  --color-neutral-900: #191B25;
+  --color-neutral-800: #232530;
+  --color-neutral-700: #2B303B;
+  --color-neutral-600: #525866;
+  --color-neutral-500: #717784;
+  --color-neutral-400: #99A0AE;
+  --color-neutral-300: #CACFD8;
+  --color-neutral-200: #E0E4EA;
+  --color-neutral-100: #F3F5F8;
+  --color-neutral-50: #F5F7FA;
+  --color-neutral-0: #FFFFFF;
+
+  --color-blue-700: #2547D0;
+  --color-blue-500: #335CFF;
+  --color-blue-50: #EBF1FF;
+
+  --color-green-500: #21C16B;
+  --color-green-100: #D1FBE9;
+
+  --color-red-500: #FB3748;
+  --color-red-100: #FFD5D8;
+}
+
+:root[data-theme="lightTheme"] {
+  /* Background colors */
+  --bg-primary: var(--color-neutral-0);
+  --bg-secondary: var(--color-neutral-100);
+  --page-bg: var(--color-neutral-100);
+  --homeHeader-bg: var(--color-neutral-100);
+
+  /* Text colors */
+  --text-primary: var(--color-neutral-950);
+  --text-secondary: var(--color-neutral-600);
+  --topBar-text: var(--color-neutral-500);
+  --hint-textColor: var(--color-neutral-600);
+
+  /* Border colors */
+  --topBar-border: var(--color-neutral-300);
+  --divider-color: var(--color-neutral-200);
+
+  /* Button styles */
+  --borderButton-borderBg: var(--color-neutral-300);
+  --borderButton-hoverBg: var(--color-neutral-300);
+  --secondaryButton-bg: var(--color-neutral-100);
+  --secondaryButton-bg-active: var(--color-blue-50);
+  --secondaryButton-text: var(--color-neutral-600);
+  --secondaryButton-hoverBorder: var(--color-neutral-300);
+  --secondaryButton-disabledBorder: var(--color-neutral-50);
+
+  /* Note styles */
+  --noteContent: var(--color-neutral-800);
+  --noteTag-bg: var(--color-neutral-200);
+  --header-secondaryColor: var(--color-neutral-600);
+
+  /* Tag styles */
+  --tag-bg: var(--color-neutral-0);
+  --tag-bg-active: var(--color-neutral-100);
+  --tag-text: var(--color-neutral-700);
+  --tag-text-active: var(--color-neutral-950);
+  --tag-icon-bg: var(--color-neutral-700);
+  --tag-icon-bg-active: var(--color-blue-500);
+
+  /* Icon styles */
+  --topbarIcon-bg: var(--color-neutral-500);
+
+  /* Form styles */
+  --input-border: var(--color-neutral-300);
+  --input-hover: var(--color-neutral-50);
+  --input-disabled: var(--color-neutral-50);
+  --input-textDisabled: var(--color-neutral-300);
+}
+
+:root[data-theme="darkTheme"] {
+  /* Background colors */
+  --bg-primary: var(--color-neutral-950);
+  --bg-secondary: var(--color-neutral-800);
+  --page-bg: var(--color-neutral-700);
+  --homeHeader-bg: var(--color-neutral-800);
+
+  /* Text colors */
+  --text-primary: var(--color-neutral-0);
+  --text-secondary: var(--color-neutral-300);
+  --topBar-text: var(--color-neutral-400);
+  --hint-textColor: var(--color-neutral-400);
+
+  /* Border colors */
+  --topBar-border: var(--color-neutral-600);
+  --divider-color: var(--color-neutral-800);
+
+  /* Button styles */
+  --borderButton-borderBg: var(--color-neutral-600);
+  --borderButton-hoverBg: var(--color-neutral-600);
+  --secondaryButton-bg: var(--color-neutral-800);
+  --secondaryButton-bg-active: var(--color-neutral-50);
+  --secondaryButton-text: var(--color-neutral-400);
+  --secondaryButton-hoverBorder: var(--color-neutral-700);
+  --secondaryButton-disabledBorder: var(--color-neutral-800);
+
+  /* Note styles */
+  --noteContent: var(--color-neutral-100);
+  --noteTag-bg: var(--color-neutral-600);
+  --header-secondaryColor: var(--color-neutral-300);
+
+  /* Tag styles */
+  --tag-bg: var(--color-neutral-950);
+  --tag-bg-active: var(--color-neutral-800);
+  --tag-text: var(--color-neutral-200);
+  --tag-text-active: var(--color-neutral-0);
+  --tag-icon-bg: var(--color-neutral-200);
+  --tag-icon-bg-active: var(--color-blue-500);
+
+  /* Icon styles */
+  --topbarIcon-bg: var(--color-neutral-400);
+
+  /* Form styles */
+  --input-border: var(--color-neutral-600);
+  --input-hover: var(--color-neutral-800);
+  --input-disabled: var(--color-neutral-800);
+  --input-textDisabled: var(--color-neutral-600);
+}
+
+@theme inline {
+  /* Background colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-page-bg: var(--page-bg);
+  --color-homeHeader-bg: var(--homeHeader-bg);
+
+  /* Text colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-topBar-text: var(--topBar-text);
+  --color-hint-textColor: var(--hint-textColor);
+
+  /* Border colors */
+  --color-topBar-border: var(--topBar-border);
+  --color-divider-color: var(--divider-color);
+
+  /* Button styles */
+  --color-borderButton-borderBg: var(--borderButton-borderBg);
+  --color-borderButton-hoverBg: var(--borderButton-hoverBg);
+  --color-secondaryButton-bg: var(--secondaryButton-bg);
+  --color-secondaryButton-bg-active: var(--secondaryButton-bg-active);
+  --color-secondaryButton-text: var(--secondaryButton-text);
+  --color-secondaryButton-hoverBorder: var(--secondaryButton-hoverBorder);
+  --color-secondaryButton-disabledBorder: var(--secondaryButton-disabledBorder);
+
+  /* Note styles */
+  --color-noteContent: var(--noteContent);
+  --color-noteTag-bg: var(--noteTag-bg);
+  --color-header-secondaryColor: var(--header-secondaryColor);
+
+  /* Tag styles */
+  --color-tag-bg: var(--tag-bg);
+  --color-tag-bg-active: var(--tag-bg-active);
+  --color-tag-text: var(--tag-text);
+  --color-tag-text-active: var(--tag-text-active);
+  --color-tag-icon-bg: var(--tag-icon-bg);
+  --color-tag-icon-bg-active: var(--tag-icon-bg-active);
+
+  /* Icon styles */
+  --color-topbarIcon-bg: var(--topbarIcon-bg);
+
+  /* Form styles */
+  --color-input-border: var(--input-border);
+  --color-input-hover: var(--input-hover);
+  --color-input-disabled: var(--input-disabled);
+  --color-input-textDisabled: var(--input-textDisabled);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
