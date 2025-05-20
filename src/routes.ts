@@ -7,6 +7,13 @@ export default [
     route('notes/:noteId', 'pages/NotePage/NotePage.tsx'),
   ]),
 
+  //todo rework routing
+  layout('layouts/SettingsPageLayout.tsx', [
+    route('/settings', 'pages/SettingsPage/SettingsPage.tsx'),
+    route('/settings/change-password', 'pages/ChangePasswordPage/ChangePasswordPage.tsx'),
+    route('/settings/:themeType', 'pages/ThemePage/ThemePage.tsx'),
+  ]),
+
   route('/login', 'pages/LoginPage/LoginPage.tsx'),
   route('/signup', 'pages/SignUpPage/SignUpPage.tsx'),
   route('/forgot', 'pages/ForgotPasswordPage/ForgotPasswordPage.tsx'),
