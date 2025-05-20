@@ -27,23 +27,25 @@ export const SideBarTag: React.FC<Props> = ({ tag, styles, onClick, isActive }) 
     <button
       onClick={() => onClick(tag.tagName)}
       className={cn(
-        'rounded-8 flex w-[240px] items-center gap-100 self-stretch px-150 py-125',
-        isActive ? 'bg-neutral-100' : 'bg-neutral-0',
+        'rounded-8 flex w-[240px] items-center gap-100 self-stretch px-150 py-125 outline-none focus-visible:shadow-defaultFocus',
+        isActive ? 'bg-tag-bg-active' : 'bg-tag-bg',
         styles?.containerStyles,
       )}
     >
-      <div className={cn(isActive ? 'text-blue-500' : 'text-neutral-700')}>
+      <div className={cn(isActive ? 'text-tag-icon-bg-active' : 'text-tag-icon-bg')}>
         <Icon className={cn('flex h-250 w-250', styles?.iconStyles)} />
       </div>
 
       <div className="grow self-end">
-        <span className={cn('text-preset-4 flex text-neutral-700', styles?.textStyles)}>
+        <span className={cn(
+          isActive ? 'text-tag-text-active' : 'text-tag-text',
+          'text-preset-4 flex text-sidebar-text', styles?.textStyles)}>
           {tag.tagName}
         </span>
       </div>
 
       {isActive && (
-        <div className="text-neutral-700">
+        <div className="text-sidebar-text">
           <IconChevron className="flex h-250 w-250" />
         </div>
       )}

@@ -22,7 +22,12 @@ export const LogoHeader: React.FC<Props> = ({ styles }) => {
   const navigate = useNavigate();
 
   return (
-    <div className={cn(styles?.containerStyles, 'col-span-full flex shrink-0 items-center')}>
+    <div
+      className={cn(
+        styles?.containerStyles,
+        'col-span-full flex shrink-0 cursor-pointer items-center',
+      )}
+    >
       <Icon className={cn(styles?.iconStyles, '')} onClick={() => navigate('/')} />
     </div>
   );

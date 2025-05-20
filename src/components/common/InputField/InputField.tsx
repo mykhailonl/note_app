@@ -38,13 +38,13 @@ export const InputField: React.FC<InputFieldType> = ({
       <div className="flex items-center gap-100">
         <label
           htmlFor={input.type}
-          className={cn(label.labelStyles, 'text-preset-4 grow text-neutral-950')}
+          className={cn(label.labelStyles, 'text-preset-4 text-text-primary grow')}
         >
           {label.labelText}
         </label>
 
         {label.labelForgotShown && (
-          <NavLink to={'../forgot'} className="text-preset-6 text-neutral-600 underline">
+          <NavLink to={'../forgot'} className="text-preset-6 text-hint-textColor underline">
             Forgot
           </NavLink>
         )}
@@ -53,9 +53,9 @@ export const InputField: React.FC<InputFieldType> = ({
       <div
         className={cn(
           input.inputContainerStyles,
-          'rounded-8 focus-within:shadow-input-focus flex items-center gap-100 border px-200 py-150 focus-within:border-neutral-950 hover:bg-neutral-50',
-          input.disabled ? 'bg-neutral-50 text-neutral-300' : 'bg-neutral-0',
-          validation.error ? 'border-red-500' : 'border-neutral-300',
+          'rounded-8 focus-within:shadow-defaultFocus flex items-center gap-100 border px-200 py-150 focus-within:border-neutral-950 hover:bg-input-hover',
+          input.disabled ? 'bg-input-disabled text-input-textDisabled' : 'bg-bg-primary',
+          validation.error ? 'border-red-500' : 'border-input-border',
         )}
       >
         {showLeftInputIcon && (
@@ -114,7 +114,7 @@ export const InputField: React.FC<InputFieldType> = ({
               ? 'text-neutral-300'
               : validation.error
                 ? 'text-red-500'
-                : 'text-neutral-600',
+                : 'text-hint-textColor',
           )}
         >
           <IconInfo className={cn(hint.hintIconStyles, 'h-200 w-200')} />

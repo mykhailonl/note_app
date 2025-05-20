@@ -1,10 +1,8 @@
 import React, { useMemo } from 'react';
 
-import { NoteProperty } from '../NoteProperty';
-
-import formatDate from '../../../utils/formatDate.ts';
-
 import { NoteTagType } from '../../../types/Notes/NotesType.ts';
+import formatDate from '../../../utils/formatDate.ts';
+import { NoteProperty } from '../NoteProperty';
 
 type Props = {
   tags: NoteTagType[];

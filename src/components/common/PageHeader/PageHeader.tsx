@@ -29,13 +29,13 @@ export const PageHeader: React.FC = () => {
   };
 
   return (
-    <header className="flex h-1000 shrink-0 items-center justify-between border-b border-neutral-200 px-400">
+    <header className="border-divider-color flex h-1000 shrink-0 items-center justify-between border-b px-400">
       {title.basicTitle ? (
-        <h1 className="text-preset-1 text-neutral-950">{title.text}</h1>
+        <h1 className="text-preset-1 text-text-primary">{title.text}</h1>
       ) : (
         <div className="text-preset-1">
-          <span className="text-neutral-600">{title.text}</span>
-          <span className="text-neutral-950">{title.extraInfo}</span>
+          <span className="text-header-secondaryColor">{title.text}</span>
+          <span>{title.extraInfo}</span>
         </div>
       )}
 
@@ -44,9 +44,9 @@ export const PageHeader: React.FC = () => {
 
         <NavLink
           to={'/settings'}
-          className={({ isActive }) =>
-            cn('p-[9px]', isActive ? 'text-blue-500' : 'text-neutral-500')
-          }
+          className={cn(
+            'text-topbarIcon-bg focus-visible:shadow-defaultFocus rounded-8 p-[9px] outline-none',
+          )}
         >
           <Icon className="h-300 w-300" aria-label={'Settings'} />
         </NavLink>

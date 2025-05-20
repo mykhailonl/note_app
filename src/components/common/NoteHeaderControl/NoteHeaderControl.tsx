@@ -5,8 +5,9 @@ import { BorderButton } from '../BorderButton';
 import { Divider } from '../Divider';
 import { PrimaryButton } from '../PrimaryButton';
 
-
 // TODO how to handle delete/archive? do i need to pass a note itself to this component?
+// TODO rewrite button into BorderButton
+// TODO backButton
 
 export const NoteHeaderControl = () => {
   const navigate = useNavigate();
@@ -26,9 +27,9 @@ export const NoteHeaderControl = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-between self-stretch">
-      <div className="tablet:pb-200 flex items-center justify-between self-stretch pb-150">
+      <div className="text-secondary tablet:pb-200 flex items-center justify-between self-stretch pb-150">
         <button
-          className="gap-050 text-preset-5 flex items-center font-sans text-neutral-600"
+          className="gap-050 text-preset-5 flex items-center"
           onClick={() => navigate(-1)}
           aria-label="Go back"
         >
@@ -38,17 +39,30 @@ export const NoteHeaderControl = () => {
         </button>
 
         <div className="flex items-center gap-200">
-          <BorderButton iconName={'delete'} onClick={handleNoteDelete} />
+          <BorderButton
+            icon={{
+              name: 'delete',
+            }}
+            onClick={handleNoteDelete}
+            buttonStyles={'border-none'}
+          />
 
-          <BorderButton iconName={'archive'} onClick={handleNoteArchive} />
+          <BorderButton
+            icon={{
+              name: 'archive',
+            }}
+            onClick={handleNoteArchive}
+            buttonStyles={'border-none'}
+          />
 
           {/*TODO styles*/}
           <PrimaryButton
             buttonText={{
               textValue: 'Cancel',
-              styles: 'text-preset-5 text-neutral-600',
+              styles: 'text-preset-5',
             }}
             onClick={handleCancelClick}
+            buttonStyles={'border-none'}
           />
 
           {/*TODO styles*/}
@@ -58,6 +72,7 @@ export const NoteHeaderControl = () => {
               styles: 'text-preset-5 text-blue-500',
             }}
             onClick={handleSaveClick}
+            buttonStyles={'border-none'}
           />
         </div>
       </div>

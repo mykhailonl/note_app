@@ -5,7 +5,8 @@ import { useDevice } from '../../../hooks/useDevice.ts';
 import { Button } from '../../../types/Buttons/Button.ts';
 import { iconComponents, RightSideBarIconName } from '../../../types/Icons/IconsType.ts';
 
-interface BorderButtonProps extends Omit<Button, 'icon'> {
+// todo move to types
+interface BorderButtonProps extends Omit<Button, 'icon' | 'buttonText'> {
   icon: {
     name: RightSideBarIconName;
     styles?: string;
@@ -13,7 +14,6 @@ interface BorderButtonProps extends Omit<Button, 'icon'> {
 }
 
 export const BorderButton: React.FC<BorderButtonProps> = ({
-  buttonText,
   type = 'button',
   onClick,
   buttonStyles,
@@ -34,12 +34,12 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
     <button
       type={type}
       className={cn(
-        'rounded-8 flex shrink-0 items-center border border-neutral-300 outline-none',
         buttonStyles,
+        'rounded-8 border-borderButton-borderBg flex shrink-0 items-center border outline-none',
         isDesktop ? 'justify-left px-200 py-150' : 'justify-center',
         disabled
           ? 'border-neutral-50 bg-neutral-50'
-          : 'focus:shadow-button-focus hover:bg-neutral-300 focus:border-neutral-950',
+          : 'focus-visible:shadow-button-focus hover:bg-borderButton-borderBg focus:border-neutral-950',
       )}
       onClick={onClick}
       disabled={disabled}
@@ -48,7 +48,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
         <Icon className={cn(icon.styles, isDesktop ? 'h-[20px] w-[20px]' : 'h-[18px] w-[18px]')} />
       )}
 
-      {isDesktop && <span className={cn('flex', buttonText?.styles)}>{displayText}</span>}
+      {isDesktop && <span className={cn('text-text-primary flex')}>{displayText}</span>}
     </button>
   );
 };

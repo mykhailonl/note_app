@@ -37,7 +37,7 @@ export const MenuBarLink: React.FC<Props> = React.memo(
           <div
             className={cn(
               'gap-050 flex flex-col items-center',
-              isActive ? 'text-blue-500' : 'text-neutral-600',
+              isActive ? 'text-blue-500' : 'text-secondaryButton-text',
             )}
           >
             <Icon className="h-6 w-6" aria-label={altText} />
@@ -53,9 +53,9 @@ export const MenuBarLink: React.FC<Props> = React.memo(
         to={href}
         className={({ isActive, isPending }) =>
           cn(
-            'rounded-4 gap-050 py-050 tablet:grow-0 tablet:w-1000 flex grow flex-col items-center justify-center',
+            'rounded-4 gap-050 py-050 tablet:grow-0 tablet:w-1000 focus-visible:shadow-defaultFocus flex grow flex-col items-center justify-center outline-none',
             styles?.linkStyles,
-            isPending ? 'pending' : isActive ? 'bg-blue-50' : '',
+            isPending ? 'pending' : isActive ? 'bg-secondaryButton-bg-active' : '',
           )
         }
       >

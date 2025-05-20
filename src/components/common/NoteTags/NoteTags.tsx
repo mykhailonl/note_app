@@ -1,14 +1,7 @@
-import React from 'react';
-
+import { NoteTagType } from '../../../types/Notes/NotesType.ts';
 import { NoteTag } from '../NoteTag';
 
-import { NoteTagType } from '../../../types/Notes/NotesType.ts';
-
-type Props = {
-  tags: NoteTagType[];
-};
-
-export const NoteTags: React.FC<Props> = ({ tags }) => {
+export const NoteTags = ({ tags }: { tags: NoteTagType[] }) => {
   return (
     <div className="flex flex-wrap content-center items-center gap-1 self-stretch">
       {tags.map((tag) => (

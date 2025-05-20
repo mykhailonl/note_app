@@ -34,16 +34,16 @@ export const NotePage = () => {
   const handleCancel = () => {};
 
   return (
-    <div className="bg-neutral-0 tablet:gap-200 tablet:px-400 tablet:py-300 flex h-full grow flex-col gap-150 px-200 py-250">
+    <div className="rounded-8 tablet:gap-200 tablet:px-400 tablet:py-300 flex h-full grow flex-col gap-150 px-200 py-250">
       {!isDesktop && <NoteHeaderControl />}
 
-      <h1 className="text-preset-1 font-sans text-neutral-950">{currentNote.title}</h1>
+      <h1 className="text-preset-1 text-text-primary">{currentNote.title}</h1>
 
       <NoteProperties tags={currentNote.tags} lastEdited={currentNote.lastEdited} />
 
       <Divider />
 
-      <div className="flex grow whitespace-pre-wrap">{currentNote.content}</div>
+      <div className="text-noteContent grow whitespace-pre-wrap">{currentNote.content}</div>
 
       {isDesktop && (
         <>
@@ -66,7 +66,7 @@ export const NotePage = () => {
               }}
               onClick={handleCancel}
               buttonStyles={'flex px-200 py-150'}
-              disabled={true}
+              disabled={false}
             />
           </div>
         </>

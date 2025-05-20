@@ -1,12 +1,7 @@
 import cn from 'classnames';
-import React from 'react';
 
-type Props = {
-  styles?: string;
-};
-
-export const Divider: React.FC<Props> = ({ styles }) => {
-  return <span className={cn('shrink-0 h-[1px] bg-neutral-200', styles)} />;
+export const Divider = ({ styles }: { styles?: string }) => {
+  return <span className={cn('bg-divider-color h-[1px] shrink-0', styles)} />;
 };
 
 export default Divider;

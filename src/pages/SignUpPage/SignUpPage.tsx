@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Divider } from '../../components/common/Divider';
 import { FormFooter } from '../../components/common/FormFooter';
 import { FormHeader } from '../../components/common/FormHeader';
@@ -8,8 +10,11 @@ import { SignUpForm } from '../../components/features/SignUp/SignUpForm';
 // TODO change last button block?
 
 export const SignUpPage = () => {
+  const navigate = useNavigate();
   // TODO
-  const handleLogin = () => {};
+  const handleLogin = () => {
+    navigate('/login');
+  };
 
   return (
     <PageWrapper>
@@ -27,9 +32,9 @@ export const SignUpPage = () => {
       <Divider />
 
       <div className="flex justify-center">
-        <p className="text-preset-5 text-neutral-600">Already have an account? </p>
+        <p className="text-preset-5 text-text-secondary">Already have an account? </p>
 
-        <button className="text-preset-5 text-neutral-950" onClick={handleLogin}>
+        <button className="text-preset-5 text-text-primary cursor-pointer" onClick={handleLogin}>
           &nbsp;Login
         </button>
       </div>

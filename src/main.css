@@ -1,13 +1,12 @@
 @import "tailwindcss";
 @import "tailwindcss/preflight.css" layer(base);
 
-@import "./styles/color.css";
+@import "./styles/colors.css";
 @import "./styles/typography.css";
 @import "./styles/spacing.css";
 @import "./styles/radius.css";
 @import "./styles/shadow.css";
 @import "./styles/grid.css";
-
 
 
 /*
@@ -77,7 +76,6 @@ TODO split to other files
   gap: var(--grid-gap-mobile);
   min-width: var(--container-width-mobile);
   width: 100%;
-  /*max-width: var(--container-width-mobile);*/
   padding-left: var(--container-padding-mobile);
   padding-right: var(--container-padding-mobile);
   margin: 0 auto;
@@ -89,7 +87,6 @@ TODO split to other files
   grid-template-columns: repeat(8, minmax(var(--grid-column-tablet), 1fr));
   gap: var(--grid-gap-tablet);
   width: 100%;
-  /*max-width: var(--container-width-tablet);*/
   padding-left: var(--container-padding-tablet);
   padding-right: var(--container-padding-tablet);
   margin: 0 auto;
@@ -101,7 +98,6 @@ TODO split to other files
   grid-template-columns: repeat(12, minmax(var(--grid-column-desktop), 1fr));
   gap: var(--grid-gap-desktop);
   width: 100%;
-  /*max-width: var(--container-width-desktop);*/
   padding-left: var(--container-padding-desktop);
   padding-right: var(--container-padding-desktop);
   margin: 0 auto;
@@ -114,8 +110,6 @@ TODO split to other files
   gap: var(--grid-gap-desktop);
   width: 100%;
   max-width: var(--container-width-desktop);
-  /*padding-left: var(--container-padding-desktop);*/
-  /*padding-right: var(--container-padding-desktop);*/
   margin: 0 auto;
   box-sizing: border-box;
 }

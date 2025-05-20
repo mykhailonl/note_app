@@ -10,7 +10,7 @@ export const FormFooter = () => {
       <Divider />
 
       <div className="flex flex-col gap-200 pt-300">
-        <p className="text-preset-5 text-center font-sans text-neutral-600">Or log in with:</p>
+        <p className="text-preset-5 text-center text-text-secondary">Or log in with:</p>
 
         <SecondaryButton
           buttonText={{
@@ -21,9 +21,10 @@ export const FormFooter = () => {
             name: 'google',
           }}
           buttonStyles={
-            'text-neutral-950 flex items-center justify-center py-150 px-200 bg-neutral-200'
+            'text-text-primary flex items-center justify-center py-150 px-200'
           }
           onClick={handleButtonClick}
+          disabled={false}
         />
       </div>
     </footer>

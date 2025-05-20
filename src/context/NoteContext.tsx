@@ -3,7 +3,6 @@ import React, { createContext, useEffect, useState } from 'react';
 import mockData from '../api/mockData.json';
 import { NoteTagType, NoteType } from '../types/Notes/NotesType.ts';
 
-
 export type NoteIdType = number;
 
 export interface NotesContextType {
@@ -39,7 +38,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
   const deleteNote = () => {};
 
   const getById = (targetId: NoteIdType) => {
-    return notes.find(note => note.id === targetId);
+    return notes.find((note) => note.id === targetId);
   };
 
   const getTags = (): string[] => {
