@@ -14,6 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <div id="overlays"></div>
         <ScrollRestoration />
         <Scripts />
       </body>

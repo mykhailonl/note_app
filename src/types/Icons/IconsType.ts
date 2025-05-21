@@ -1,7 +1,9 @@
 import { ReactComponent as ArchiveIcon } from '../../assets/images/icon-archive.svg';
 import { ReactComponent as LeftArrowIcon } from '../../assets/images/icon-arrow-left.svg';
+import { ReactComponent as CheckmarkIcon } from '../../assets/images/icon-checkmark.svg';
 import { ReactComponent as ChevronRightIcon } from '../../assets/images/icon-chevron-right.svg';
 import { ReactComponent as ClockIcon } from '../../assets/images/icon-clock.svg';
+import { ReactComponent as CrossIcon } from '../../assets/images/icon-cross.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/images/icon-delete.svg';
 import { ReactComponent as FontMonospaceIcon } from '../../assets/images/icon-font-monospace.svg';
 import { ReactComponent as FontSansSerifIcon } from '../../assets/images/icon-font-sans-serif.svg';
@@ -57,6 +59,8 @@ export const iconComponents = {
   radioLightChecked: RadioLightCheckedIcon,
   radioDark: RadioDarkIcon,
   radioDarkChecked: RadioDarkCheckedIcon,
+  checkmark: CheckmarkIcon,
+  cross: CrossIcon,
 };
 
 // Type for icons based on dict keys
@@ -88,3 +92,7 @@ export type RadioButtonsIconName = Extract<
   IconName,
   'radioLight' | 'radioLightChecked' | 'radioDark' | 'radioDarkChecked'
 >;
+
+export type ModalIconName = Extract<IconName, 'delete' | 'archive'>;
+
+export type ToastIconName = Extract<IconName, 'checkmark' | 'cross'>;

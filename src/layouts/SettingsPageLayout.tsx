@@ -6,6 +6,7 @@ import { HomeMenuBar } from '../components/common/HomeMenuBar';
 import { PageContent } from '../components/common/PageContent';
 import { PageHeader } from '../components/common/PageHeader';
 import { SideBar } from '../components/common/SideBar';
+import { ToastContainer } from '../components/common/ToastContainer';
 import { useDevice } from '../hooks/useDevice.ts';
 
 import DesktopLayout from './DesktopLayout.tsx';
@@ -23,6 +24,42 @@ export const SettingsPageLayout = () => {
 
   if (!isDesktop && isSettingsPage) {
     return (
+      <>
+        <ToastContainer />
+
+        <MainLayout>
+          <HomeHeader />
+
+          <Outlet />
+
+          <HomeMenuBar />
+        </MainLayout>
+      </>
+    );
+  }
+
+  if (isDesktop) {
+    return (
+      <>
+        <ToastContainer />
+
+        <DesktopLayout>
+          <SideBar />
+
+          <div className="flex h-screen grow flex-col">
+            <PageHeader />
+
+            <PageContent />
+          </div>
+        </DesktopLayout>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <ToastContainer />
+
       <MainLayout>
         <HomeHeader />
 
@@ -30,31 +67,7 @@ export const SettingsPageLayout = () => {
 
         <HomeMenuBar />
       </MainLayout>
-    );
-  }
-
-  if (isDesktop) {
-    return (
-      <DesktopLayout>
-        <SideBar />
-
-        <div className="flex h-screen grow flex-col">
-          <PageHeader />
-
-          <PageContent />
-        </div>
-      </DesktopLayout>
-    );
-  }
-
-  return (
-    <MainLayout>
-      <HomeHeader />
-
-      <Outlet />
-
-      <HomeMenuBar />
-    </MainLayout>
+    </>
   );
 };
 

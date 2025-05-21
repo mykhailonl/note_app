@@ -45,6 +45,7 @@
   --primaryButton-disabledText: var(--color-neutral-300);
   --borderButton-borderBg: var(--color-neutral-300);
   --borderButton-hoverBg: var(--color-neutral-300);
+  --borderButton-focusBorder: var(--color-neutral-950);
   --secondaryButton-bg: var(--color-neutral-100);
   --secondaryButton-bg-active: var(--color-blue-50);
   --secondaryButton-text: var(--color-neutral-600);
@@ -72,6 +73,15 @@
   --input-hover: var(--color-neutral-50);
   --input-disabled: var(--color-neutral-50);
   --input-textDisabled: var(--color-neutral-300);
+
+  /* Modal styles */
+  --modal-bg: var(--color-neutral-0);
+  --modal-border: var(--color-neutral-200);
+  --modal-iconBg: var(--color-neutral-100);
+
+  /* Toast styles */
+  --toast-bg: var(--color-neutral-0);
+  --toast-border: var(--color-neutral-200);
 }
 
 :root[data-theme="darkTheme"] {
@@ -96,6 +106,7 @@
   --primaryButton-disabledText: var(--color-neutral-800);
   --borderButton-borderBg: var(--color-neutral-600);
   --borderButton-hoverBg: var(--color-neutral-600);
+  --borderButton-focusBorder: var(--color-neutral-950);
   --secondaryButton-bg: var(--color-neutral-800);
   --secondaryButton-bg-active: var(--color-neutral-50);
   --secondaryButton-text: var(--color-neutral-400);
@@ -123,6 +134,15 @@
   --input-hover: var(--color-neutral-800);
   --input-disabled: var(--color-neutral-800);
   --input-textDisabled: var(--color-neutral-600);
+
+  /* Modal styles */
+  --modal-bg: var(--color-neutral-700);
+  --modal-border: var(--color-neutral-600);
+  --modal-iconBg: var(--color-neutral-600);
+
+  /* Toast styles */
+  --toast-bg: var(--color-neutral-800);
+  --toast-border: var(--color-neutral-700);
 }
 
 @theme inline {
@@ -147,6 +167,7 @@
   --color-primaryButton-disabledText: var(--primaryButton-disabledText);
   --color-borderButton-borderBg: var(--borderButton-borderBg);
   --color-borderButton-hoverBg: var(--borderButton-hoverBg);
+  --color-borderButton-focusBorder: var(--borderButton-focusBorder);
   --color-secondaryButton-bg: var(--secondaryButton-bg);
   --color-secondaryButton-bg-active: var(--secondaryButton-bg-active);
   --color-secondaryButton-text: var(--secondaryButton-text);
@@ -174,6 +195,15 @@
   --color-input-hover: var(--input-hover);
   --color-input-disabled: var(--input-disabled);
   --color-input-textDisabled: var(--input-textDisabled);
+
+  /* Modal styles */
+  --color-modal-bg: var(--modal-bg);
+  --color-modal-border: var(--modal-border);
+  --color-modal-iconBg: var(--modal-iconBg);
+
+  /* Toast styles */
+  --color-toast-bg: var(--toast-bg);
+  --color-toast-border: var(--toast-border);
 }
 
 body {

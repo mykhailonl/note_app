@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
+import { useModal } from '../../../hooks/useModal.ts';
+import { useToast } from '../../../hooks/useToast.ts';
 import { iconComponents } from '../../../types/Icons/IconsType.ts';
 import { BorderButton } from '../BorderButton';
 import { Divider } from '../Divider';
@@ -8,22 +10,34 @@ import { PrimaryButton } from '../PrimaryButton';
 // TODO how to handle delete/archive? do i need to pass a note itself to this component?
 // TODO rewrite button into BorderButton
 // TODO backButton
+//todo rework? design darkTheme modal file
 
 export const NoteHeaderControl = () => {
   const navigate = useNavigate();
+  const { openModal } = useModal();
+  const { showToast } = useToast();
+
   const Icon = iconComponents['leftArrow'];
 
   // TODO
-  const handleNoteDelete = () => {};
+  const handleNoteDelete = () => {
+    openModal('delete');
+  };
 
   // TODO
-  const handleNoteArchive = () => {};
+  const handleNoteArchive = () => {
+    openModal('archive');
+  };
 
   // TODO
-  const handleCancelClick = () => {};
+  const handleCancelClick = () => {
+    navigate(-1);
+  };
 
   // TODO
-  const handleSaveClick = () => {};
+  const handleSaveClick = () => {
+    showToast('added');
+  };
 
   return (
     <div className="flex w-full flex-col items-center justify-between self-stretch">
@@ -55,7 +69,7 @@ export const NoteHeaderControl = () => {
             buttonStyles={'border-none'}
           />
 
-          {/*TODO styles*/}
+          {/*TODO fix hover bg*/}
           <PrimaryButton
             buttonText={{
               textValue: 'Cancel',
@@ -65,7 +79,7 @@ export const NoteHeaderControl = () => {
             buttonStyles={'border-none'}
           />
 
-          {/*TODO styles*/}
+          {/*TODO fix hover bg*/}
           <PrimaryButton
             buttonText={{
               textValue: 'Save Note',
