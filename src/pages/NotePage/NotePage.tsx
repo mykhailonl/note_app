@@ -7,6 +7,7 @@ import { PrimaryButton } from '../../components/common/PrimaryButton';
 import { SecondaryButton } from '../../components/common/SecondaryButton';
 import { useDevice } from '../../hooks/useDevice.ts';
 import { useNotes } from '../../hooks/useNotes.ts';
+import { useToast } from '../../hooks/useToast.ts';
 
 // TODO how to render note body if Ill add an edit functionality
 
@@ -14,6 +15,7 @@ export const NotePage = () => {
   const { noteId } = useParams();
   const navigate = useNavigate();
 
+  const { showToast } = useToast();
   const { isDesktop } = useDevice();
   const { getById } = useNotes();
 
@@ -29,21 +31,29 @@ export const NotePage = () => {
     return;
   }
 
-  const handleSave = () => {};
+  const { title, lastEdited, content, tags } = currentNote;
 
-  const handleCancel = () => {};
+  //#region handlers
+  const handleSave = () => {
+    showToast('added');
+  };
+
+  const handleCancel = () => {
+    navigate(-1);
+  };
+  //#endregion
 
   return (
     <div className="rounded-8 tablet:gap-200 tablet:px-400 tablet:py-300 flex h-full grow flex-col gap-150 px-200 py-250">
       {!isDesktop && <NoteHeaderControl />}
 
-      <h1 className="text-preset-1 text-text-primary">{currentNote.title}</h1>
+      <h1 className="text-preset-1 text-text-primary">{title}</h1>
 
-      <NoteProperties tags={currentNote.tags} lastEdited={currentNote.lastEdited} />
+      <NoteProperties tags={tags} lastEdited={lastEdited} />
 
       <Divider />
 
-      <div className="text-noteContent grow whitespace-pre-wrap">{currentNote.content}</div>
+      <div className="text-noteContent grow whitespace-pre-wrap">{content}</div>
 
       {isDesktop && (
         <>

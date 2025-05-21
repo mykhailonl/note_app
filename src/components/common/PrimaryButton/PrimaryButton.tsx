@@ -16,11 +16,11 @@ export const PrimaryButton = ({
       type={type}
       onClick={onClick}
       className={cn(
-        'rounded-8  border border-blue-500 outline-none',
-        buttonStyles,
+        'rounded-8 border outline-none',
         disabled
           ? 'bg-primaryButton-disabled border-primaryButton-disabled cursor-not-allowed'
-          : 'focus-visible:shadow-defaultFocus hover:bg-blue-700 cursor-pointer',
+          : 'focus-visible:shadow-defaultFocus cursor-pointer border-blue-500 hover:bg-blue-700',
+        buttonStyles,
       )}
       disabled={disabled}
       form={form}

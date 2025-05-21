@@ -19,7 +19,7 @@ export const HomeMenuBar = React.memo(() => {
   const showText = isTablet;
 
   return (
-    <nav className="tablet:tablet-grid mobile-grid shadow-menubar bg-bg-primary fixed bottom-0 left-0 z-2 border-t border-divider-color">
+    <nav className="tablet:tablet-grid mobile-grid shadow-menubar bg-bg-primary border-divider-color fixed bottom-0 left-0 z-2 border-t">
       <div className="tablet:justify-between col-span-full flex w-full content-center self-stretch py-150">
         {NAV_ITEMS.map((item, index) => (
           <React.Fragment key={item.href}>

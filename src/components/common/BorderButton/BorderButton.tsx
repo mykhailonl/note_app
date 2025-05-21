@@ -15,7 +15,7 @@ export const BorderButton = ({
   const Icon = icon && iconComponents[icon.name];
 
   const linkTextMap: Record<RightSideBarIconName, string> = {
-    archive: 'Archive Notes',
+    archive: 'Archive Note',
     delete: 'Delete Note',
   };
 
@@ -30,7 +30,7 @@ export const BorderButton = ({
         isDesktop ? 'justify-left px-200 py-150' : 'justify-center',
         disabled
           ? 'border-neutral-50 bg-neutral-50'
-          : 'focus-visible:shadow-button-focus hover:bg-borderButton-borderBg focus:border-neutral-950',
+          : 'focus-visible:shadow-button-focus hover:bg-borderButton-borderBg focus-visible:border-borderButton-focusBorder',
       )}
       onClick={onClick}
       disabled={disabled}

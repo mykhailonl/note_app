@@ -1,9 +1,16 @@
+import { useModal } from '../../../hooks/useModal.ts';
 import { BorderButton } from '../BorderButton';
 
 export const SideBarRight = () => {
-  const handleNoteArchive = () => {};
+  const { openModal } = useModal();
 
-  const handleNoteDelete = () => {};
+  const handleNoteArchive = () => {
+    openModal('archive');
+  };
+
+  const handleNoteDelete = () => {
+    openModal('delete');
+  };
 
   return (
     <div className="mr-400 flex w-[240px] shrink-0 flex-col gap-150 py-250 pl-200">
