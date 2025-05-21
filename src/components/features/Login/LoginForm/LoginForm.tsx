@@ -11,6 +11,8 @@ import { PrimaryButton } from '../../../common/PrimaryButton';
  * formAction action
  * */
 
+// todo text in case of validation error, check design files
+
 export const LoginForm = () => {
   // const [result, submitAction, isPending] = useActionState(
   //   async (previousState, formData) => {
