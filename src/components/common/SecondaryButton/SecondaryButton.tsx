@@ -29,7 +29,7 @@ export const SecondaryButton = ({
     >
       {Icon && <Icon className={cn(icon.styles, '')} />}
 
-      <span className={cn('flex', buttonText.styles, '')}>{buttonText.textValue}</span>
+      <span className={cn('flex', buttonText.styles)}>{buttonText.textValue}</span>
     </button>
   );
 };
