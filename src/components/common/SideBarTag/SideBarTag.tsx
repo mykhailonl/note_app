@@ -13,7 +13,7 @@ export const SideBarTag = ({ tag, styles, onClick, isActive }: SideBarTagProps) 
     <button
       onClick={() => onClick(tag.tagName)}
       className={cn(
-        'rounded-8 focus-visible:shadow-defaultFocus flex w-[240px] cursor-pointer items-center gap-100 self-stretch px-150 py-125 outline-none',
+        'rounded-8 focus-visible:shadow-defaultFocus flex  cursor-pointer items-center gap-100 self-stretch px-150 py-125 outline-none',
         isActive ? 'bg-tag-bg-active' : 'bg-tag-bg',
         styles?.containerStyles,
       )}

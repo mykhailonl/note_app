@@ -12,23 +12,20 @@ export const Modal = ({ content, styles, onClose }: ModalProps) => {
   const { modalType, closeModal } = useModal();
   const { showToast } = useToast();
 
-  const archivedModal = modalType === 'archive';
-  const deleteModal = modalType === 'delete';
-
   const Icon = iconComponents[content.iconName];
 
   const handlePrimaryButtonClick = () => {
-    if (archivedModal) {
-      closeModal();
-      showToast('archived');
+    closeModal();
 
-      return;
-    }
-
-    if (deleteModal) {
-      closeModal();
-
-      showToast('deleted');
+    switch (modalType) {
+      case 'delete':
+        showToast('deleted');
+        break;
+      case 'archive':
+        showToast('archived');
+        break;
+      default:
+        return;
     }
   }
 

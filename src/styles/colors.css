@@ -73,6 +73,8 @@
   --input-hover: var(--color-neutral-50);
   --input-disabled: var(--color-neutral-50);
   --input-textDisabled: var(--color-neutral-300);
+  --input-bg: var(--color-neutral-100);
+  --input-placeholderShownBg: var(--color-neutral-50);
 
   /* Modal styles */
   --modal-bg: var(--color-neutral-0);
@@ -134,6 +136,8 @@
   --input-hover: var(--color-neutral-800);
   --input-disabled: var(--color-neutral-800);
   --input-textDisabled: var(--color-neutral-600);
+  --input-bg: var(--color-neutral-800);
+  --input-placeholderShownBg: var(--color-neutral-900);
 
   /* Modal styles */
   --modal-bg: var(--color-neutral-700);
@@ -195,6 +199,8 @@
   --color-input-hover: var(--input-hover);
   --color-input-disabled: var(--input-disabled);
   --color-input-textDisabled: var(--input-textDisabled);
+  --color-input-bg: var(--input-bg);
+  --color-input-placeholderShownBg: var(--input-placeholderShownBg);
 
   /* Modal styles */
   --color-modal-bg: var(--modal-bg);

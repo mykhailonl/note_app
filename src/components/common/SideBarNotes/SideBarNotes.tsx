@@ -1,14 +1,26 @@
+import { useMemo } from 'react';
+
 import { useNotes } from '../../../hooks/useNotes.ts';
+import { useSearchQuery } from '../../../hooks/useSearchQuery.ts';
 import { NoteList } from '../NoteList';
+import { NoteStatusNotification } from '../NoteStatusNotification';
 import { PrimaryButton } from '../PrimaryButton';
 
 export const SideBarNotes = () => {
-  const { notes } = useNotes();
+  const { query, tags: activeTags } = useSearchQuery();
+  const { filterNotes } = useNotes();
+
+  const filteredNotes = useMemo(() => {
+    return filterNotes(query, activeTags);
+  }, [query, activeTags, filterNotes]);
+
+  const noAvailableNotes = !filteredNotes.length;
+
   // TODO
   const handleButtonClick = () => {};
 
   return (
-    <div className="flex border-r border-divider-color px-400 py-250">
+    <div className="border-divider-color flex border-r px-400 py-250">
       <div className="flex flex-col gap-200">
         <PrimaryButton
           buttonText={{
@@ -29,7 +41,11 @@ export const SideBarNotes = () => {
             scrollbarWidth: 'none',
           }}
         >
-          <NoteList userNotes={notes} />
+          {noAvailableNotes ? (
+            <NoteStatusNotification notificationType={'noAvailable'} />
+          ) : (
+            <NoteList userNotes={filteredNotes} />
+          )}
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export const NoteList = ({ userNotes, styles }: NoteListProps) => {
   const { noteId } = useParams();
 
   return (
-    <div className={cn('flex flex-col gap-1 self-stretch', styles?.containerStyles)}>
+    <div className={cn('flex grow flex-col gap-1 self-stretch', styles?.containerStyles)}>
       {userNotes.map((note, index) => {
         const isActive = noteId ? +noteId === note.id : false;
         const isNextActive = noteId ? +noteId === note.id + 1 : false;

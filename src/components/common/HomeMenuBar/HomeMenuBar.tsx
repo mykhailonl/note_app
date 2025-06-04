@@ -6,9 +6,9 @@ import { MenuBarLink } from '../MenuBarLink';
 
 const NAV_ITEMS = [
   { href: '/', iconName: 'home' },
-  { href: '/search', iconName: 'search' },
-  { href: '/archive', iconName: 'archive' },
-  { href: '/tags', iconName: 'tag' },
+  { href: '/?mode=search', iconName: 'search' },
+  { href: '/?mode=archive', iconName: 'archive' },
+  { href: '/?mode=tags', iconName: 'tag' },
   { href: '/settings', iconName: 'settings' },
 ] as const;
 

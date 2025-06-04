@@ -43,3 +43,14 @@ export interface NoteTagProps {
 export interface NoteTagsProps {
   tags: NoteTagType[];
 }
+
+export type NoteNotificationType = 'noAvailable' | 'noArchived' | 'noFiltered';
+
+export interface NoteStatusNotificationProps {
+  notificationType: NoteNotificationType;
+  styles?: {
+    containerStyles?: string;
+    textStyles?: string;
+    linkStyles?: string;
+  };
+}

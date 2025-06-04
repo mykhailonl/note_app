@@ -11,6 +11,7 @@ import { SideBarTag } from '../SideBarTag';
 
 export const SideBar = () => {
   const { getTags } = useNotes();
+  const availableTags = !!getTags().length;
 
   const [searchParams, setSearchParams] = useSearchParams();
   const tags = searchParams.getAll('tags') || [];
@@ -37,22 +38,26 @@ export const SideBar = () => {
 
         <Divider />
 
-        <div className="flex h-[20px] items-center self-stretch px-100">
-          <h1 className="text-preset-4 text-neutral-500">Tags</h1>
-        </div>
+        {availableTags && (
+          <>
+            <div className="flex h-[20px] items-center self-stretch px-100">
+              <h1 className="text-preset-4 text-neutral-500">Tags</h1>
+            </div>
 
-        <div className="gap-050 flex flex-col items-start self-stretch">
-          {getTags().map((tag) => (
-            <SideBarTag
-              key={tag}
-              tag={{
-                tagName: tag,
-              }}
-              onClick={(tag) => toggleTag(tag)}
-              isActive={tags.includes(tag)}
-            />
-          ))}
-        </div>
+            <div className="gap-050 flex flex-col items-start self-stretch w-[240px]">
+              {getTags().map((tag) => (
+                <SideBarTag
+                  key={tag}
+                  tag={{
+                    tagName: tag,
+                  }}
+                  onClick={(tag) => toggleTag(tag)}
+                  isActive={tags.includes(tag)}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
