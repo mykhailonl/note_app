@@ -1,13 +1,27 @@
+import { PageModes, PageTitleTypes } from '../types/Pages/Page.ts';
+
 export default function getPageTitle(pathname: string, searchParams: URLSearchParams) {
-  const ROUTE_TITLES: { [key: string]: string } = {
+  const ROUTE_TITLES: Record<PageTitleTypes, string> = {
     '/': 'All Notes',
     '/settings': 'Settings',
   };
 
-  const title = ROUTE_TITLES[pathname] || 'All Notes';
+  const title = ROUTE_TITLES[pathname as PageTitleTypes] || 'All Notes';
 
   const searchQuery = searchParams.get('query');
   const tagQuery = searchParams.getAll('tags');
+  const mode = searchParams.get('mode') as PageModes;
+
+  if (mode) {
+    switch (mode) {
+      case 'archive':
+        return { text: 'Archive', basicTitle: true };
+      case 'search':
+        return { text: 'Search', basicTitle: true };
+      case 'tags':
+        return { text: 'Tags', basicTitle: true };
+    }
+  }
 
   if (searchQuery) {
     return {

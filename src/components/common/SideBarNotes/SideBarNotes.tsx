@@ -1,11 +1,20 @@
+import { useMemo } from 'react';
+
 import { useNotes } from '../../../hooks/useNotes.ts';
+import { useSearchQuery } from '../../../hooks/useSearchQuery.ts';
 import { NoteList } from '../NoteList';
 import { NoteStatusNotification } from '../NoteStatusNotification';
 import { PrimaryButton } from '../PrimaryButton';
 
 export const SideBarNotes = () => {
-  const { notes } = useNotes();
-  const noAvailableNotes = !notes.length;
+  const { query, tags: activeTags } = useSearchQuery();
+  const { filterNotes } = useNotes();
+
+  const filteredNotes = useMemo(() => {
+    return filterNotes(query, activeTags);
+  }, [query, activeTags, filterNotes]);
+
+  const noAvailableNotes = !filteredNotes.length;
 
   // TODO
   const handleButtonClick = () => {};
@@ -35,7 +44,7 @@ export const SideBarNotes = () => {
           {noAvailableNotes ? (
             <NoteStatusNotification notificationType={'noAvailable'} />
           ) : (
-            <NoteList userNotes={notes} />
+            <NoteList userNotes={filteredNotes} />
           )}
         </div>
       </div>

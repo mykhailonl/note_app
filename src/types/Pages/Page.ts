@@ -8,3 +8,7 @@ export interface PageFormWrapperProps {
 export interface PageWrapperProps {
   children: React.ReactNode;
 }
+
+export type PageTitleTypes = '/' | '/settings';
+
+export type PageModes = 'search' | 'archive' | 'tags';
