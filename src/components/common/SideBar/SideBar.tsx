@@ -7,11 +7,11 @@ import { LogoHeader } from '../LogoHeader';
 import SideBarPages from '../SideBarPages/SideBarPages.tsx';
 import { SideBarTag } from '../SideBarTag';
 
-// TODO filter notes
+// TODO separate Sidebar tagList itself from the rest
 
 export const SideBar = () => {
-  const { getTags } = useNotes();
-  const availableTags = !!getTags().length;
+  const { tags: tagList } = useNotes();
+  const availableTags = !!tagList.length;
 
   const [searchParams, setSearchParams] = useSearchParams();
   const tags = searchParams.getAll('tags') || [];
@@ -45,7 +45,7 @@ export const SideBar = () => {
             </div>
 
             <div className="gap-050 flex flex-col items-start self-stretch w-[240px]">
-              {getTags().map((tag) => (
+              {tagList.map((tag) => (
                 <SideBarTag
                   key={tag}
                   tag={{
