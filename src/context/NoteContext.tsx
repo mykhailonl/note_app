@@ -7,7 +7,7 @@ export type NoteIdType = number;
 
 export interface NotesContextType {
   notes: NoteType[];
-  getTags: () => NoteTagType[];
+  tags: NoteTagType[];
   getById: (id: NoteIdType) => NoteType | undefined;
   filterNotes: (query: string, tags: NoteTagType[]) => NoteType[];
 }
@@ -15,7 +15,7 @@ export interface NotesContextType {
 // eslint-disable-next-line react-refresh/only-export-components
 export const NotesContext = createContext<NotesContextType>({
   notes: [],
-  getTags: () => [],
+  tags: [],
   getById: () => undefined,
   filterNotes: () => [],
 });
@@ -31,6 +31,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
     setNotes(mockData.notes);
   }, []);
 
+  //#region note methods
   const addNote = useCallback(() => {
     // TODO: implement
   }, []);
@@ -46,6 +47,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
   const deleteNote = useCallback(() => {
     // TODO: implement
   }, []);
+  //#endregion
 
   const getById = useCallback(
     (targetId: NoteIdType) => {
@@ -54,7 +56,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
     [notes],
   );
 
-  const getTags = useCallback((): string[] => {
+  const tags = useMemo((): NoteTagType[] => {
     const allTags = notes.flatMap((note) => note.tags);
 
     return [...new Set(allTags)];
@@ -103,11 +105,11 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
       updateNote,
       archiveNote,
       deleteNote,
-      getTags,
+      tags,
       getById,
       filterNotes,
     }),
-    [notes, addNote, updateNote, archiveNote, deleteNote, getTags, getById, filterNotes],
+    [notes, addNote, updateNote, archiveNote, deleteNote, getById, filterNotes, tags],
   );
 
   return <NotesContext.Provider value={value}>{children}</NotesContext.Provider>;

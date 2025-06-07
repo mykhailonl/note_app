@@ -9,6 +9,8 @@ import {
 } from '../../../types/Settings/Settings.ts';
 import { BackButton } from '../BackButton';
 
+// todo rewrite to simplify
+
 export const SettingsHeaderBlock = () => {
   const { isDesktop } = useDevice();
   const location = useLocation();
@@ -36,10 +38,11 @@ export const SettingsHeaderBlock = () => {
       {!isDesktop && (
         <BackButton
           styles={{
+            containerStyle: 'gap-100',
             iconStyle: 'w-250 h-250',
           }}
-          buttonText={'Settings'}
-          href={'/settings'}
+          buttonText='Settings'
+          href='/settings'
         />
       )}
 

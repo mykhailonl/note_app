@@ -7,6 +7,7 @@ const textContent: Record<NoteNotificationType, string> = {
   noAvailable: 'You don’t have any notes yet. Start a new note to capture your thoughts and ideas.',
   noArchived: 'No notes have been archived yet. Move notes here for safekeeping, or',
   noFiltered: 'No notes match your search. Try a different keyword or',
+  noTagsYet: `You don't have tags yet, to create them simply assign it to any of your notes.`,
 };
 
 export const NoteStatusNotification = ({

@@ -1,13 +1,15 @@
 import { type RouteConfig, route, layout } from '@react-router/dev/routes';
 
 export default [
-  // * matches all URLs, the ? makes it optional so it will match / as well
   layout('layouts/HomePageLayout.tsx', [
-    route('/', 'pages/HomePage/HomePage.tsx'),
+    layout('pages/HomePage/HomePage.tsx', [
+      route('/', 'pages/AllNotesPage/AllNotesPage.tsx'),
+      route('/search', 'pages/SearchPage/SearchPage.tsx'),
+      route('/tags', 'pages/TagsPage/TagsPage.tsx'),
+    ]),
     route('notes/:noteId', 'pages/NotePage/NotePage.tsx'),
   ]),
 
-  //todo rework routing
   layout('layouts/SettingsPageLayout.tsx', [
     route('/settings', 'pages/SettingsPage/SettingsPage.tsx'),
     route('/settings/change-password', 'pages/ChangePasswordPage/ChangePasswordPage.tsx'),

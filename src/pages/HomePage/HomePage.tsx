@@ -1,84 +1,54 @@
-import { useMemo } from 'react';
+import cn from 'classnames';
+import { Outlet } from 'react-router';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
+import { BackButton } from '../../components/common/BackButton';
 import { NewNoteButton } from '../../components/common/NewNoteButton';
-import { NoteList } from '../../components/common/NoteList';
-import { NoteStatusNotification } from '../../components/common/NoteStatusNotification';
-import { TopBarSearch } from '../../components/common/TopBarSearch';
-import { useNotes } from '../../hooks/useNotes.ts';
-import { useSearchQuery } from '../../hooks/useSearchQuery.ts';
-import { PageModes } from '../../types/Pages/Page.ts';
 import getPageTitle from '../../utils/getPageTitle.ts';
 
 // todo check if placeholder shown styles are applying
 
+// todo create tagsPage layout and logic for mobile/tablet
+
+// todo fix this mess with conditional page logic
 export const HomePage = () => {
-  //#region hooks
   const [searchParams] = useSearchParams();
-  const { query, inputValue, handleQueryChange, tags: activeTags } = useSearchQuery();
-  const location = useLocation();
-  const { notes, filterNotes } = useNotes();
-  //#endregion
+  const { pathname } = useLocation();
+  const isTagsPage = pathname.includes('tags');
+  const hasSelectedTags = !!searchParams.getAll('tags').length;
 
-  const filteredNotes = useMemo(() => {
-    return filterNotes(query, activeTags);
-  }, [query, activeTags, filterNotes]);
-
-  const pageMode = searchParams.get('mode') as PageModes;
-
-  //#region conditions
-  const noAvailableNotes = !notes.length;
-  const isSearchPage = pageMode === 'search';
-  const hasSearchQuery = !!query.trim();
-  const noMatchingQueryNotes = hasSearchQuery && !filteredNotes.length;
-  //#endregion
-
-  const title = getPageTitle(location.pathname, searchParams);
-
-  const renderNoteContent = () => {
-    if (noAvailableNotes) {
-      return <NoteStatusNotification notificationType={'noAvailable'} />;
-    }
-
-    if (noMatchingQueryNotes) {
-      return <NoteStatusNotification notificationType="noFiltered" />;
-    }
-
-    return <NoteList userNotes={filteredNotes} />;
-  };
+  const title = getPageTitle(pathname, searchParams);
 
   return (
     <>
       <div className="mobile-grid tablet:tablet-grid tablet:py-300 box-border h-full rounded-t-xl py-250">
         <div className="col-span-full flex flex-col items-start gap-200">
-          <h1 className="text-preset-1 text-primary self-stretch">{title.text}</h1>
-
-          {isSearchPage && (
-            <>
-              <TopBarSearch
-                onChange={handleQueryChange}
-                value={inputValue}
-                styles={{
-                  containerStyles:
-                    'self-stretch bg-input-bg placeholder-shown:bg-input-placeholderShownBg',
-                }}
-              />
-
-              {hasSearchQuery && filteredNotes.length > 0 && (
-                <div className="text-preset-5 text-text-secondary flex self-stretch">
-                  All notes matching ”<span className="text-text-primary">{query}</span>” are
-                  displayed below.
-                </div>
-              )}
-            </>
+          {isTagsPage && hasSelectedTags && (
+            <BackButton
+              buttonText="Go Back"
+              href="/tags"
+              styles={{
+                containerStyle: 'gap-050',
+                iconStyle: 'h-[18px] w-[18px]',
+                textStyle: 'text-preset-5',
+              }}
+            />
           )}
 
-          {renderNoteContent()}
+          <h1 className={cn(
+            title.extraInfo ? 'text-hint-textColor' : 'text-text-primary',
+            "text-preset-1 self-stretch"
+          )}>
+            {title.text}
+            <span className='text-text-primary'>{title.extraInfo}</span>
+          </h1>
+
+          <Outlet />
         </div>
       </div>
 
       <NewNoteButton
-        iconName={'plus'}
+        iconName="plus"
         styles={{
           buttonStyles:
             'fixed z-4 bottom-900 right-200 tablet:right-300 tablet:bottom-1200 outline-none focus-visible:shadow-defaultFocus',

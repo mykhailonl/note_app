@@ -20,5 +20,3 @@ export interface SideBarLinkProps {
     ingStyles?: string;
   };
 }
-
-export type LinkTypes = '/' | '/?mode=archive' | '/?mode=search' | '/?mode=tags';

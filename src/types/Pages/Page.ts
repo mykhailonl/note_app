@@ -9,6 +9,6 @@ export interface PageWrapperProps {
   children: React.ReactNode;
 }
 
-export type PageTitleTypes = '/' | '/settings';
+export type PageTitleTypes = '/' | '/settings' | '/tags' | '/search';
 
 export type PageModes = 'search' | 'archive' | 'tags';
