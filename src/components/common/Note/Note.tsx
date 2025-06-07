@@ -23,7 +23,7 @@ export const Note = ({ note, isActive }: NoteProps) => {
       onClick={handleNoteClick}
     >
       <NavLink
-        to={`notes/${note.id}?${searchParams}`}
+        to={`/notes/${note.id}?${searchParams}`}
         className="focus-visible:shadow-defaultFocus rounded-8 outline-none"
       >
         <h1 className="text-preset-3 w-full">{note.title}</h1>

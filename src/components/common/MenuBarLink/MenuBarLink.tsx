@@ -2,15 +2,12 @@ import cn from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useIsActiveLink } from '../../../hooks/useIsActiveLink.ts';
 import { iconComponents, MenuIconName } from '../../../types/Icons/IconsType.ts';
-import { LinkTypes, MenuBarLinkProps } from '../../../types/Links/Links.ts';
+import { MenuBarLinkProps } from '../../../types/Links/Links.ts';
 
 export const MenuBarLink = React.memo(
   ({ href, iconName, altText = '', showText = false, styles }: MenuBarLinkProps) => {
-    const isActive = useIsActiveLink(href as LinkTypes);
-
-    const renderLink = React.useCallback(() => {
+    const renderLink = React.useCallback((isActive: boolean) => {
       const Icon = iconComponents[iconName];
 
       const linkTextMap: Record<MenuIconName, string> = {
@@ -34,18 +31,18 @@ export const MenuBarLink = React.memo(
           {showText && <span className="text-preset-6">{displayText}</span>}
         </div>
       );
-    }, [iconName, altText, showText, isActive]);
+    }, [iconName, altText, showText]);
 
     return (
       <NavLink
         to={href}
-        className={cn(
+        className={({ isActive }) => cn(
           'rounded-4 gap-050 py-050 tablet:grow-0 tablet:w-1000 focus-visible:shadow-defaultFocus flex grow flex-col items-center justify-center outline-none',
           styles?.linkStyles,
           isActive ? 'bg-secondaryButton-bg-active' : '',
         )}
       >
-        {renderLink}
+        {({ isActive }) => renderLink(isActive)}
       </NavLink>
     );
   },

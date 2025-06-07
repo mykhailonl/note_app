@@ -6,9 +6,9 @@ import { MenuBarLink } from '../MenuBarLink';
 
 const NAV_ITEMS = [
   { href: '/', iconName: 'home' },
-  { href: '/?mode=search', iconName: 'search' },
-  { href: '/?mode=archive', iconName: 'archive' },
-  { href: '/?mode=tags', iconName: 'tag' },
+  { href: '/search', iconName: 'search' },
+  { href: '/archive', iconName: 'archive' },
+  { href: '/tags', iconName: 'tag' },
   { href: '/settings', iconName: 'settings' },
 ] as const;
 
@@ -25,7 +25,7 @@ export const HomeMenuBar = React.memo(() => {
           <React.Fragment key={item.href}>
             <MenuBarLink href={item.href} iconName={item.iconName} showText={showText} />
 
-            {index < NAV_ITEMS.length - 1 && showText && <Divider styles={'h-full w-[1px]'} />}
+            {index < NAV_ITEMS.length - 1 && showText && <Divider styles='h-full w-[1px]' />}
           </React.Fragment>
         ))}
       </div>
