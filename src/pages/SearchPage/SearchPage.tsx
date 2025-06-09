@@ -12,7 +12,7 @@ export const SearchPage = () => {
   const { query, inputValue, handleQueryChange, tags: activeTags } = useSearchQuery();
 
   const filteredNotes = useMemo(() => {
-    return filterNotes(query, activeTags);
+    return filterNotes({ query, tags: activeTags });
   }, [query, activeTags, filterNotes]);
 
   const hasSearchQuery = !!query.trim();

@@ -7,10 +7,6 @@ import { NewNoteButton } from '../../components/common/NewNoteButton';
 import getPageTitle from '../../utils/getPageTitle.ts';
 
 // todo check if placeholder shown styles are applying
-
-// todo create tagsPage layout and logic for mobile/tablet
-
-// todo fix this mess with conditional page logic
 export const HomePage = () => {
   const [searchParams] = useSearchParams();
   const { pathname } = useLocation();
