@@ -9,7 +9,13 @@ export interface NotesContextType {
   notes: NoteType[];
   tags: NoteTagType[];
   getById: (id: NoteIdType) => NoteType | undefined;
-  filterNotes: (query: string, tags: NoteTagType[]) => NoteType[];
+  filterNotes: (params?: FilterNotesParams) => NoteType[];
+}
+
+interface FilterNotesParams {
+  query?: string;
+  tags?: NoteTagType[];
+  archivedNotes?: boolean;
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -81,8 +87,12 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
   }, []);
 
   const filterNotes = useCallback(
-    (query?: string, tags?: NoteTagType[]) => {
+    ({ query, tags, archivedNotes }: FilterNotesParams = {}) => {
       let filtered = notes;
+
+      if (archivedNotes) {
+        filtered = filtered.filter((note) => note.isArchived);
+      }
 
       if (query?.trim()) {
         filtered = filterByQuery(filtered, query);
