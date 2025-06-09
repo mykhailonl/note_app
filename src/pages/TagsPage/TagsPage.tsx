@@ -14,7 +14,7 @@ export const TagsPage = () => {
   const tagsSelected = searchParams.getAll('tags');
 
   const filteredNotes = useMemo(() => {
-    return filterNotes('', tagsSelected);
+    return filterNotes({ tags: tagsSelected });
   }, [tagsSelected, filterNotes]);
 
   if (!tagsSelected.length) {

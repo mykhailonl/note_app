@@ -18,11 +18,19 @@ export interface NoteProps {
   isActive: boolean;
 }
 
+export interface ExtendedNoteProps extends NoteProps {
+  fromArchive?: boolean;
+}
+
 export interface NoteListProps {
   userNotes: NoteType[];
   styles?: {
     containerStyles?: string;
   };
+}
+
+export interface ExtendedNoteListProps extends NoteListProps {
+  fromArchive?: boolean;
 }
 
 export interface NotePropertiesProps {

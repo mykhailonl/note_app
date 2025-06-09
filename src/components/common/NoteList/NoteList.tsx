@@ -2,11 +2,11 @@ import cn from 'classnames';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { NoteListProps } from '../../../types/Notes/Notes.ts';
+import { ExtendedNoteListProps } from '../../../types/Notes/Notes.ts';
 import { Divider } from '../Divider';
 import { Note } from '../Note';
 
-export const NoteList = ({ userNotes, styles }: NoteListProps) => {
+export const NoteList = ({ userNotes, styles, fromArchive }: ExtendedNoteListProps) => {
   const { noteId } = useParams();
 
   return (
@@ -18,7 +18,7 @@ export const NoteList = ({ userNotes, styles }: NoteListProps) => {
 
         return (
           <React.Fragment key={note.id}>
-            <Note note={note} isActive={isActive} />
+            <Note note={note} isActive={isActive} fromArchive={fromArchive} />
 
             {showDivider ? <Divider /> : <Divider styles={'bg-transparent'} />}
           </React.Fragment>

@@ -1,4 +1,4 @@
-import { PageModes, PageTitleTypes } from '../types/Pages/Page.ts';
+import { PageTitleTypes } from '../types/Pages/Page.ts';
 
 export default function getPageTitle(pathname: string, searchParams: URLSearchParams) {
   const ROUTE_TITLES: Record<PageTitleTypes, string> = {
@@ -6,13 +6,13 @@ export default function getPageTitle(pathname: string, searchParams: URLSearchPa
     '/settings': 'Settings',
     '/tags': 'Tags',
     '/search': 'Search',
+    '/archive': 'Archived Notes',
   };
 
   const title = ROUTE_TITLES[pathname as PageTitleTypes] || 'All Notes';
 
   const searchQuery = searchParams.get('query');
   const tagQuery = searchParams.getAll('tags');
-  const mode = searchParams.get('mode') as PageModes;
 
   if (searchQuery) {
     return {
@@ -28,17 +28,6 @@ export default function getPageTitle(pathname: string, searchParams: URLSearchPa
       extraInfo: tagQuery.length > 6 ? tagQuery.slice(0, 6).join(', ') : tagQuery.join(', '),
       basicTitle: false,
     };
-  }
-
-  if (mode) {
-    switch (mode) {
-      case 'archive':
-        return { text: 'Archive', basicTitle: true };
-      case 'search':
-        return { text: 'Search', basicTitle: true };
-      case 'tags':
-        return { text: 'Tags', basicTitle: true };
-    }
   }
 
   return { text: title, basicTitle: true };

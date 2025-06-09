@@ -33,6 +33,7 @@
   /* Text colors */
   --text-primary: var(--color-neutral-950);
   --text-secondary: var(--color-neutral-600);
+  --text-tertiary: var(--color-neutral-700);
   --topBar-text: var(--color-neutral-500);
   --hint-textColor: var(--color-neutral-600);
 
@@ -96,6 +97,7 @@
   /* Text colors */
   --text-primary: var(--color-neutral-0);
   --text-secondary: var(--color-neutral-300);
+  --text-tertiary: var(--color-neutral-200);
   --topBar-text: var(--color-neutral-400);
   --hint-textColor: var(--color-neutral-400);
 
@@ -110,7 +112,7 @@
   --borderButton-hoverBg: var(--color-neutral-600);
   --borderButton-focusBorder: var(--color-neutral-950);
   --secondaryButton-bg: var(--color-neutral-800);
-  --secondaryButton-bg-active: var(--color-neutral-50);
+  --secondaryButton-bg-active: var(--color-neutral-700);
   --secondaryButton-text: var(--color-neutral-400);
   --secondaryButton-hoverBorder: var(--color-neutral-700);
   --secondaryButton-disabledBorder: var(--color-neutral-800);
@@ -159,6 +161,7 @@
   /* Text colors */
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
   --color-topBar-text: var(--topBar-text);
   --color-hint-textColor: var(--hint-textColor);
 

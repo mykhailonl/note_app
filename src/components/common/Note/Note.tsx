@@ -1,18 +1,22 @@
 import cn from 'classnames';
 import { useMemo } from 'react';
-import { NavLink } from 'react-router';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import { NoteProps } from '../../../types/Notes/Notes.ts';
+import { ExtendedNoteProps } from '../../../types/Notes/Notes.ts';
 import formatDate from '../../../utils/formatDate.ts';
 import { NoteTags } from '../NoteTags';
 
-export const Note = ({ note, isActive }: NoteProps) => {
+export const Note = ({ note, isActive, fromArchive }: ExtendedNoteProps) => {
   const formattedDate = useMemo(() => formatDate(note.lastEdited), [note]);
 
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
-  const handleNoteClick = () => {};
+  const handleNoteClick = () => {
+    navigate(`/notes/${note.id}?${searchParams}`, {
+      state: { from: fromArchive ? 'archive' : 'all' },
+    });
+  };
 
   return (
     <div
@@ -22,12 +26,9 @@ export const Note = ({ note, isActive }: NoteProps) => {
       )}
       onClick={handleNoteClick}
     >
-      <NavLink
-        to={`/notes/${note.id}?${searchParams}`}
-        className="focus-visible:shadow-defaultFocus rounded-8 outline-none"
-      >
+      <div className="focus-visible:shadow-defaultFocus rounded-8 outline-none">
         <h1 className="text-preset-3 w-full">{note.title}</h1>
-      </NavLink>
+      </div>
 
       <NoteTags tags={note.tags} />
 
