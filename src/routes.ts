@@ -6,6 +6,7 @@ export default [
       route('/', 'pages/AllNotesPage/AllNotesPage.tsx'),
       route('/search', 'pages/SearchPage/SearchPage.tsx'),
       route('/tags', 'pages/TagsPage/TagsPage.tsx'),
+      route('/archive', 'pages/ArchivedNotesPage/ArchivedNotesPage.tsx'),
     ]),
     route('notes/:noteId', 'pages/NotePage/NotePage.tsx'),
   ]),
